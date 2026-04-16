@@ -1,7 +1,7 @@
 ---
 layout: single
 permalink: /about/
-title: "About Table"
+title: "About"
 header:
   overlay_color: "#eaf4f9"
 toc: true

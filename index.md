@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /
-title: "Table"
+title: "Candid conversations for founders, operators, and investors"
 hero_logo: /assets/images/logo.png
 hero_title: "Table"
 hero_tagline: "There's always a seat for you at Table."
