@@ -1,0 +1,53 @@
+title: "Table"
+subtitle: "Candid conversations for founders, operators, and investors."
+description: >-
+  Table is a monthly in-person gathering in NYC where founders, operators,
+  advisors, and investors pull up a chair, bring a real question, and trust
+  the people around them to help think it through.
+url: "https://tabledialog.github.io"
+baseurl: "/tabledialog-site"
+repository: "tabledialog/tabledialog-site"
+
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "air"
+
+locale: "en-US"
+search: false
+words_per_minute: 200
+
+logo: "/assets/images/logo.png"
+
+author:
+  name: "Table"
+  avatar: "/assets/images/logo.png"
+  bio: "Candid conversations for founders, operators, and investors."
+  location: "New York, NY"
+
+atom_feed:
+  hide: true
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - docs
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: "main"

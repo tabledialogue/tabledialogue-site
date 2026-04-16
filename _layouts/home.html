@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<div class="table-hero">
+  {% if page.hero_logo %}
+    <img src="{{ page.hero_logo | relative_url }}" alt="{{ site.title }} logo" class="table-hero__logo" />
+  {% endif %}
+  <h1 class="table-hero__title">{{ page.hero_title | default: site.title }}</h1>
+  <p class="table-hero__tagline">{{ page.hero_tagline | default: site.subtitle }}</p>
+  {% if page.cta_label and page.cta_url %}
+    <a href="{{ page.cta_url }}" class="table-hero__cta">{{ page.cta_label }}</a>
+  {% endif %}
+</div>
+
+<div class="page__inner-wrap">
+  <section class="page__content table-section">
+    {{ content }}
+
+    {% if page.photos and page.photos.size > 0 %}
+      <div class="table-photos">
+        {% for photo in page.photos %}
+          <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy" />
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+
+  {% if page.values and page.values.size > 0 %}
+    <section class="table-section">
+      <h2 class="table-section__heading">What we stand for</h2>
+      <p class="table-section__lede">A few values that shape every Table conversation.</p>
+      <ul class="table-values">
+        {% for value in page.values %}
+          <li class="table-values__item">{{ value }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% if page.testimonials and page.testimonials.size > 0 %}
+    <section class="table-section">
+      <h2 class="table-section__heading">What members say</h2>
+      <div class="table-testimonials">
+        {% for t in page.testimonials %}
+          <figure class="table-testimonial">
+            <blockquote class="table-testimonial__quote">{{ t.quote }}</blockquote>
+            <figcaption class="table-testimonial__attribution">— {{ t.name }}</figcaption>
+          </figure>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.closing_cta %}
+    <section class="table-closing-cta">
+      <h2 class="table-closing-cta__heading">{{ page.closing_cta.heading }}</h2>
+      {% if page.closing_cta.body %}<p>{{ page.closing_cta.body }}</p>{% endif %}
+      {% if page.closing_cta.label and page.closing_cta.url %}
+        <a href="{{ page.closing_cta.url }}" class="table-hero__cta">{{ page.closing_cta.label }}</a>
+      {% endif %}
+    </section>
+  {% endif %}
+</div>
