@@ -16,6 +16,17 @@ layout: default
         {% endif %}
         <a href="{{ '/about/' | relative_url }}" class="td-button td-button--ghost">Read our story</a>
       </div>
+
+      <div class="td-hero__meta">
+        <div>
+          <strong>Monthly</strong>
+          <span>In-person, NYC</span>
+        </div>
+        <div>
+          <strong>1,200+</strong>
+          <span>Founders, operators &amp; investors</span>
+        </div>
+      </div>
     </div>
 
     {% if page.photos and page.photos.size > 0 %}
@@ -85,6 +96,7 @@ layout: default
 
   {% if page.closing_cta %}
     <section class="td-cta-band" data-reveal>
+      <p class="td-cta-band__eyebrow">RSVP</p>
       <h2 class="td-cta-band__heading">{{ page.closing_cta.heading }}</h2>
       {% if page.closing_cta.body %}<p class="td-cta-band__body">{{ page.closing_cta.body }}</p>{% endif %}
       {% if page.closing_cta.label and page.closing_cta.url %}
