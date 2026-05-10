@@ -4,9 +4,9 @@ description: >-
   Table is a monthly in-person gathering in NYC where founders, operators,
   advisors, and investors pull up a chair, bring a real question, and trust
   the people around them to help think it through.
-url: "https://tabledialog.github.io"
-baseurl: "/tabledialog-site"
-repository: "tabledialog/tabledialog-site"
+url: "https://tabledialogue.github.io"
+baseurl: "/tabledialogue-site"
+repository: "tabledialogue/tabledialogue-site"
 
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "air"

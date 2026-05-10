@@ -2,50 +2,81 @@
 layout: default
 ---
 
-<div class="table-hero">
-  {% if page.hero_logo %}
-    <img src="{{ page.hero_logo | relative_url }}" alt="{{ site.title }} logo" class="table-hero__logo" />
-  {% endif %}
-  <h1 class="table-hero__title">{{ page.hero_title | default: site.title }}</h1>
-  <p class="table-hero__tagline">{{ page.hero_tagline | default: site.subtitle }}</p>
-  {% if page.cta_label and page.cta_url %}
-    <a href="{{ page.cta_url }}" class="table-hero__cta">{{ page.cta_label }}</a>
-  {% endif %}
-</div>
-
-<div class="page__inner-wrap">
-  <section class="page__content table-section">
-    {{ content }}
+<section class="td-hero">
+  <div class="td-hero__inner">
+    <div class="td-hero__copy" data-reveal>
+      {% if page.hero_eyebrow or site.location %}
+        <span class="td-hero__eyebrow">{{ page.hero_eyebrow | default: "NYC · Dinners & Conversation" }}</span>
+      {% endif %}
+      <h1 class="td-hero__title">{{ page.hero_title | default: site.title }}</h1>
+      <p class="td-hero__lede">{{ page.hero_tagline | default: site.subtitle }}</p>
+      <div class="td-hero__ctas">
+        {% if page.cta_label and page.cta_url %}
+          <a href="{{ page.cta_url }}" class="td-button">{{ page.cta_label }}</a>
+        {% endif %}
+        <a href="{{ '/about/' | relative_url }}" class="td-button td-button--ghost">Read our story</a>
+      </div>
+    </div>
 
     {% if page.photos and page.photos.size > 0 %}
-      <div class="table-photos">
-        {% for photo in page.photos %}
-          <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy" />
-        {% endfor %}
-      </div>
+      <figure class="td-hero__media" data-reveal>
+        <img src="{{ page.photos[0].src | relative_url }}" alt="{{ page.photos[0].alt }}" loading="eager" />
+      </figure>
     {% endif %}
+  </div>
+</section>
+
+<div class="td-shell">
+  <section class="td-section" data-reveal>
+    <p class="td-section__eyebrow">The idea</p>
+    <div class="td-prose">
+      {{ content }}
+    </div>
   </section>
 
-  {% if page.values and page.values.size > 0 %}
-    <section class="table-section">
-      <h2 class="table-section__heading">What we stand for</h2>
-      <p class="table-section__lede">A few values that shape every Table conversation.</p>
-      <ul class="table-values">
-        {% for value in page.values %}
-          <li class="table-values__item">{{ value }}</li>
+  {% if page.photos and page.photos.size > 1 %}
+    <section class="td-section" data-reveal>
+      <p class="td-section__eyebrow">Around the table</p>
+      <h2 class="td-section__heading">Real rooms. Real questions. Real talk.</h2>
+      <div class="td-gallery">
+        {% assign rest = page.photos | slice: 1, 10 %}
+        {% for photo in rest %}
+          {% if forloop.first %}
+            <figure class="td-gallery__item--tall">
+              <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy" />
+              <figcaption>NYC · 2025</figcaption>
+            </figure>
+          {% else %}
+            <figure class="td-gallery__item--wide">
+              <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy" />
+            </figure>
+          {% endif %}
         {% endfor %}
-      </ul>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.values and page.values.size > 0 %}
+    <section class="td-section" data-reveal>
+      <p class="td-section__eyebrow">What we stand for</p>
+      <h2 class="td-section__heading">A few values that shape every Table conversation.</h2>
+      <ol class="td-values">
+        {% for value in page.values %}
+          <li class="td-values__item">{{ value }}</li>
+        {% endfor %}
+      </ol>
     </section>
   {% endif %}
 
   {% if page.testimonials and page.testimonials.size > 0 %}
-    <section class="table-section">
-      <h2 class="table-section__heading">What members say</h2>
-      <div class="table-testimonials">
+    <section class="td-section" data-reveal>
+      <p class="td-section__eyebrow">What members say</p>
+      <h2 class="td-section__heading">Voices from around the table.</h2>
+      <div class="td-quotes">
         {% for t in page.testimonials %}
-          <figure class="table-testimonial">
-            <blockquote class="table-testimonial__quote">{{ t.quote }}</blockquote>
-            <figcaption class="table-testimonial__attribution">— {{ t.name }}</figcaption>
+          <figure class="td-quote">
+            <blockquote class="td-quote__text">{{ t.quote }}</blockquote>
+            <figcaption class="td-quote__cite">{{ t.name }}</figcaption>
           </figure>
         {% endfor %}
       </div>
@@ -53,12 +84,34 @@ layout: default
   {% endif %}
 
   {% if page.closing_cta %}
-    <section class="table-closing-cta">
-      <h2 class="table-closing-cta__heading">{{ page.closing_cta.heading }}</h2>
-      {% if page.closing_cta.body %}<p>{{ page.closing_cta.body }}</p>{% endif %}
+    <section class="td-cta-band" data-reveal>
+      <h2 class="td-cta-band__heading">{{ page.closing_cta.heading }}</h2>
+      {% if page.closing_cta.body %}<p class="td-cta-band__body">{{ page.closing_cta.body }}</p>{% endif %}
       {% if page.closing_cta.label and page.closing_cta.url %}
-        <a href="{{ page.closing_cta.url }}" class="table-hero__cta">{{ page.closing_cta.label }}</a>
+        <a href="{{ page.closing_cta.url }}" class="td-button">{{ page.closing_cta.label }}</a>
       {% endif %}
     </section>
   {% endif %}
 </div>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+  })();
+</script>
