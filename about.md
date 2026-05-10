@@ -2,8 +2,6 @@
 layout: single
 permalink: /about/
 title: "About"
-header:
-  overlay_color: "#eaf4f9"
 toc: true
 toc_label: "On this page"
 toc_sticky: true
