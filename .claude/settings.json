@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle install)",
+      "Bash(bundle exec jekyll build)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(bundle exec jekyll serve)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(bundle exec jekyll doctor)",
+      "Bash(bundle exec jekyll clean)",
+      "Bash(git status)",
+      "Bash(git status:*)",
+      "Bash(git diff)",
+      "Bash(git diff:*)",
+      "Bash(git log)",
+      "Bash(git log:*)",
+      "Bash(git branch)",
+      "Bash(git branch:*)",
+      "Bash(git show)",
+      "Bash(git show:*)",
+      "Bash(ls)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(find . *)",
+      "Bash(rg:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}
