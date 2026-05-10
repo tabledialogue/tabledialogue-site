@@ -2,9 +2,8 @@
 layout: single
 permalink: /about/
 title: "About"
-toc: true
-toc_label: "On this page"
-toc_sticky: true
+toc: false
+sidebar: false
 ---
 
 ## Origin Story
