@@ -35,14 +35,41 @@ The custom `home` layout reads structured front-matter from `index.md` (`hero_*`
 
 ## Local development
 
+The canonical path is native Ruby 3.x:
+
 ```bash
-bundle install                    # first time, installs gems into vendor/bundle if configured
-bundle exec jekyll serve          # http://127.0.0.1:4000/tabledialogue-site/
-bundle exec jekyll serve --livereload
-bundle exec jekyll build          # one-shot build into _site/
+bundle install
+bundle exec jekyll serve --livereload   # http://localhost:4000/tabledialogue-site/
+bundle exec jekyll build                # one-shot build into _site/
 ```
 
 `Gemfile.lock` is gitignored (GitHub Pages controls versions).
+
+### On this machine: Docker
+
+If a working native Ruby 3.x isn't set up, run Jekyll inside an ad-hoc `ruby:3.1` container. Port **4001** is used so `docker run` doesn't collide with whatever else may already be on 4000.
+
+```bash
+docker run -d \
+  --name td-jekyll \
+  -p 4001:4001 \
+  -v "$(pwd):/srv/site" \
+  -w /srv/site \
+  ruby:3.1 \
+  sh -c "bundle config set --local path vendor/bundle && bundle install --jobs 4 && bundle exec jekyll serve --host 0.0.0.0 --port 4001"
+```
+
+- Site URL: **http://localhost:4001/tabledialogue-site/**
+- First boot does a full `bundle install` (~1–3 min). `docker logs -f td-jekyll` to watch progress until `Server running...`.
+
+Lifecycle:
+
+```bash
+docker logs -f td-jekyll    # follow build/serve output
+docker stop td-jekyll       # pause (preserves theme cache)
+docker start td-jekyll      # resume
+docker rm -f td-jekyll      # remove (next start re-downloads theme)
+```
 
 ## Conventions
 

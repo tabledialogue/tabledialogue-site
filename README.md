@@ -13,7 +13,7 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Then open http://127.0.0.1:4000/tabledialogue-site/.
+Then open http://localhost:4000/tabledialogue-site/.
 
 To build without serving:
 
