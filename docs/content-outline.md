@@ -7,6 +7,8 @@
 > - Member count is **1,300+** (was 1,200+ on the old site).
 > - Hero H1 is the **tagline**, not the word "Table" (per brief).
 > - Voice: plain, direct, second-person where natural. No marketing fluff.
+> - **Location/cadence-agnostic** in forward-facing copy. Don't say "in NYC" or "monthly" on the home page. The community has run events in Raleigh and is exploring the Capital Region; cadence is growing beyond a single monthly event. Historical references (e.g. "started in 2018 as a monthly NYC meetup") are fine in the origin story.
+> - **All event CTAs are "RSVP"** with the same styling. Every RSVP button links to the Luma calendar page (`https://luma.com/cal-DCBzNA01juAwL7A`) and opens in a new window. The on-page Luma embed lets visitors see and click into specific events without leaving the page; the RSVP button is for visitors who want the full calendar view.
 
 ---
 
@@ -24,17 +26,17 @@ Candid conversations for founders, operators, and investors.
 There's always a seat for you at Table.
 
 **CTA button:**
-Reserve your seat
+RSVP *(links to `https://luma.com/cal-DCBzNA01juAwL7A`, opens in new window)*
 
 ---
 
 ### 3. Intro / "What Table is"
 
-*Short prose block, narrow column. The first thing visitors actually read.*
+*Short prose block, narrow column. The first thing visitors actually read. This is the ONE place "no keynote speakers, no pitch decks" appears.*
 
-Table is a monthly gathering in New York City for founders, operators, advisors, and investors.
+Table is a gathering for founders, operators, advisors, and investors. We meet in person to have real conversations about what actually matters: fundraising, hiring, pivots, AI, co-founder dynamics, and the questions that keep you up at night.
 
-No keynote speakers. No pitch decks. Just people sitting around a table having real conversations about what actually matters: fundraising, hiring, pivots, AI, co-founder dynamics, and the questions that keep you up at night.
+No keynote speakers. No pitch decks. Just people sitting around a table.
 
 The best insights come from honest conversation, not polished presentations.
 
@@ -43,25 +45,27 @@ The best insights come from honest conversation, not polished presentations.
 ### 4. Alternating image-text blocks (the philosophy, told visually)
 
 **4a. Real rooms.**
-Table meets every month in NYC. In person, around a real table. Rooms small enough that everyone gets airtime, large enough that you'll meet someone you wouldn't have met otherwise.
+Table gatherings happen in person, around a real table. Rooms small enough that everyone gets airtime, large enough that you'll meet someone you wouldn't have met otherwise.
 
 **4b. Real questions.**
 Every attendee proposes the topics. We vote, we discuss, and we move when the energy moves. No fixed agenda. Whoever shows up sets the conversation.
 
 **4c. Real talk.**
-No decks. No pitches. No performative networking. The people at the table have built companies, raised rounds, hired teams, and made mistakes. They bring those scars to the conversation.
+The people at the table have built companies, raised rounds, hired teams, and made mistakes. They bring those scars to the conversation, not a rehearsed version of them.
 
 ---
 
 ### 4a. How it works
-*A short, concrete beat after the alternating blocks. Could render as a 4-step horizontal strip with mono-font numbers.*
+*A short, concrete beat after the alternating blocks. Renders as a 4-step horizontal strip with mono-font numbers, plus a one-line lead above.*
 
 **Eyebrow:** HOW A TABLE SESSION RUNS
 
+**Lead (above the steps):** Each Table runs about an hour. Networking before, networking after, structured discussion in between.
+
 1. **Propose.** Every attendee writes the topics they want to discuss.
-2. **Vote.** We rank them together. The room decides what we talk about.
-3. **Discuss.** Five minutes per topic. Then we vote to continue or move on.
-4. **Repeat.** Until coffee runs out.
+2. **Vote.** The room ranks them.
+3. **Discuss.** Five minutes per topic. When time's up, we vote to continue or move on.
+4. **Connect.** Stick around after for more conversation.
 
 ---
 
@@ -69,7 +73,7 @@ No decks. No pitches. No performative networking. The people at the table have b
 
 **Eyebrow (mono):** WHO'S AT TABLE
 **Big stat (serif):** 1,300+
-**Caption (sans):** founders, operators, advisors, and investors building in NYC and beyond.
+**Caption (sans):** founders, operators, advisors, and investors in the Table community.
 
 *Below the stat: small grid of 6–8 attendee photos.*
 
@@ -102,7 +106,6 @@ No decks. No pitches. No performative networking. The people at the table have b
 9. Offer value when you want someone's attention.
 10. Communication is everything with your team.
 11. Be open to mentorship and advice.
-12. AI is an opportunity, not just a threat.
 
 ---
 
@@ -128,9 +131,9 @@ Placeholder until provided.
 
 **H2 (white serif on saturated blue):** Pull up a chair.
 
-**Body (white sans):** Table meets every month in NYC. Bring a real question and a willingness to help someone else think through theirs.
+**Body (white sans):** Bring a real question and a willingness to help someone else think through theirs.
 
-**Button:** Get on the invite list
+**Button:** RSVP *(same Luma calendar link, new window — matches the hero CTA exactly)*
 
 ---
 
@@ -150,7 +153,7 @@ Placeholder until provided.
 ### 2. Page intro
 
 **H1 (orange):** About Table
-**Subhead (1 sentence):** A small team behind a growing monthly community in New York City.
+**Subhead (1 sentence):** A small team behind a growing community of founders, operators, advisors, and investors.
 
 ---
 
@@ -179,7 +182,7 @@ Table is organized by **Geoff Scott**, **Benjamin Friedman**, and **Karina Mulle
 
 **4e.** So we gave it the name it deserved: **Table.**
 
-Today, Table meets every month in NYC. We're adding new events and expanding to new cities.
+Today, Table runs regular gatherings in New York and beyond. We've held sessions in Raleigh, and we're exploring new cities including the Capital Region. We're also adding new event formats alongside the original lean-coffee mornings.
 
 There's always a seat for you at Table.
 
@@ -271,6 +274,5 @@ Help us shape themed sessions and bring expertise into the conversation.
 2. **Amanda's testimonial** — full quote text and how she should be credited.
 3. **Sponsor one-liners** — short note for each of Mariposa Wellness, Benjamin's, GS Ventures.
 4. **Members band photos** — should this be event candids (existing photos cropped) or curated portraits? Plan currently uses event candid crops.
-5. **"Reserve your seat" CTA destination** — currently a `#rsvp` anchor; should it link to the Luma series or a specific event?
-6. **How it works** copy — does "Until coffee runs out." land as a closing beat or feel too cute? Open to swapping.
-7. **Aha moments** — current list is 12 items pulled from existing `about.md`. Any you want to add, cut, or rephrase before they become design elements?
+5. **Raleigh / Capital Region in origin story** — about-page section 4e now mentions Raleigh and the Capital Region explicitly. If those references are too forward, I can soften to "We've held sessions outside New York and are exploring new cities."
+6. **Aha moments** — current list is 11 items (cut the AI POV one). Any you want to add, cut, or rephrase before they become design elements?
