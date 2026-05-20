@@ -54,7 +54,7 @@ A small grid under "Who's at Table — 1,300+". Picking 6 with visual variety so
 
 ![DSC01110](../assets/images/incoming/DSC01110.JPG)
 
-**`DSC01110.JPG`** — Karina + 3 attendees in conversation; candid attentive faces.
+**`DSC01110.JPG`** — Four attendees in conversation; candid attentive faces, post-its prominent on the table.
 
 #### Members 3
 
@@ -76,9 +76,9 @@ A small grid under "Who's at Table — 1,300+". Picking 6 with visual variety so
 
 #### Members 6
 
-![DSC01088](../assets/images/incoming/DSC01088.JPG)
+![DSC01103](../assets/images/incoming/DSC01103.JPG)
 
-**`DSC01088.JPG`** — 2 foreground attendees + 2 standing in back; layered depth.
+**`DSC01103.JPG`** — Five attendees at the long table; foreground attendee speaking with hands raised mid-thought, the rest leaning in. Strong table-side angle, post-its everywhere — different perspective from the other five.
 
 ---
 
@@ -160,7 +160,7 @@ DSC01110.JPG → members-02-karina-attendees.jpg
 DSC08398.JPG → members-03-row-daylight.jpg
 DSC08393.JPG → members-04-nyc-window.jpg
 DSC08377.JPG → members-05-conversation.jpg
-DSC01088.JPG → members-06-layered.jpg
+DSC01103.JPG → members-06-speaking-tableside.jpg
 DSC08339.JPG → aha-moments-postits-overhead.jpg   (optional)
 DSC01076.JPG → organizers-three.jpg
 DSC08322.JPG → origin-2018-lean-coffee.jpg
