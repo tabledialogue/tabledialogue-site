@@ -138,98 +138,151 @@ a {
 }
 a:hover { color: var(--ink); }
 
-/* ----- 4. Masthead override (no fork) ----- */
-.masthead {
-  background: rgba(246, 239, 227, 0.85);
-  backdrop-filter: saturate(140%) blur(8px);
-  -webkit-backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: 1px solid var(--border);
+/* ----- 4. Masthead (custom — overrides MM via _includes/masthead.html) -----
+   Blue-pale band, logo lockup left, nav center-right, RSVP CTA rightmost.
+   The minimal-mistakes default masthead markup is replaced wholesale, so
+   the old .masthead/.site-title/.greedy-nav rules are gone.
+*/
+.td-masthead {
+  background: var(--blue-pale);
+  border-bottom: 1px solid rgba(15, 30, 50, 0.06);
   position: sticky;
   top: 0;
   z-index: 50;
+  backdrop-filter: saturate(110%);
+  -webkit-backdrop-filter: saturate(110%);
+}
 
-  &__inner-wrap {
-    max-width: var(--max-page);
-    padding: 1rem 1.5rem;
+.td-masthead__inner {
+  max-width: var(--max-page);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 
-    @media (max-width: 720px) {
-      padding: 0.75rem 1.25rem;
-    }
+  @media (max-width: 640px) {
+    padding: 0.75rem 1rem;
+    gap: var(--space-2);
   }
 }
 
-.site-title {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.4rem;
-  letter-spacing: -0.012em;
-  color: var(--ink) !important;
+.td-masthead__nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.td-masthead__link {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft) !important;
+  padding: 0.4rem 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--accent-ink) !important;
+    border-bottom-color: var(--accent);
+  }
+
+  &[aria-current="page"] {
+    color: var(--accent-ink) !important;
+    border-bottom-color: var(--accent);
+  }
+}
+
+.td-masthead__cta {
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .td-masthead__nav { gap: 0.9rem; }
+  .td-masthead__link { font-size: 0.7rem; letter-spacing: 0.14em; }
+}
+@media (max-width: 540px) {
+  .td-masthead__cta { display: none; }
+}
+
+/* ----- 4a. Logo lockup ----- */
+.site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
 
-  &::after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    transform: translateY(1px);
-    opacity: 0.9;
-  }
-}
+  &:hover { color: inherit; }
 
-.site-subtitle {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  color: var(--muted);
-  letter-spacing: 0.01em;
-}
-
-.greedy-nav {
-  background: transparent;
-
-  a {
-    font-family: var(--sans);
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-soft) !important;
-    padding: 0.5rem 0.85rem;
-    transition: color .15s ease;
-    &:hover { color: var(--accent) !important; }
+  &__mark {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: block;
   }
 
-  .visible-links a:before {
-    background: var(--accent);
-    height: 1.5px;
-    bottom: -2px;
+  &__wordmark {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-variation-settings: "SOFT" 30, "opsz" 96;
+    color: var(--accent-ink);
+    font-size: 1.7rem;
+    letter-spacing: -0.028em;
+    line-height: 0.95;
+    text-transform: lowercase;
   }
+
+  &--stacked {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  &--small .site-logo__mark    { width: 28px; height: 28px; }
+  &--small .site-logo__wordmark { font-size: 1.35rem; }
+
+  &--large .site-logo__mark    { width: 56px; height: 56px; }
+  &--large .site-logo__wordmark { font-size: 2.6rem; }
 }
 
-.site-logo img {
-  max-height: 2rem;
-  border-radius: 4px;
+@media (max-width: 480px) {
+  .site-logo--default .site-logo__mark    { width: 32px; height: 32px; }
+  .site-logo--default .site-logo__wordmark { font-size: 1.5rem; }
 }
 
-/* ----- 5. Buttons ----- */
+/* ----- 5. Buttons -----
+   All event CTAs on the site are "RSVP" rendered with the default
+   .td-button style (saturated-orange / white). Modifiers:
+     --ghost  outlined orange-on-transparent (over photos / dark bands)
+     --ink    dark/ink background (for light surfaces where needed)
+     --small  compact padding (masthead, inline links)
+     --plain  drop the trailing arrow (use for short labels like "RSVP")
+*/
 .td-button,
 .td-button:visited {
   display: inline-flex;
   align-items: center;
   gap: 0.55em;
   font-family: var(--sans);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 0.95em 1.6em;
+  letter-spacing: 0.04em;
+  padding: 0.85em 1.7em;
   border-radius: var(--radius-button);
-  background: var(--ink);
-  color: var(--paper) !important;
-  border: 1px solid var(--ink);
+  background: var(--accent);
+  color: #FFFFFF !important;
+  border: 1px solid var(--accent);
+  text-decoration: none;
   transition: background .2s ease, transform .15s ease, color .2s ease, box-shadow .2s ease, border-color .2s ease;
   position: relative;
+  cursor: pointer;
+  white-space: nowrap;
 
   &::after {
     content: "\2192";
@@ -241,36 +294,58 @@ a:hover { color: var(--ink); }
   }
 }
 .td-button:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff !important;
+  background: var(--accent-ink);
+  border-color: var(--accent-ink);
+  color: #FFFFFF !important;
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -14px rgba(181, 83, 42, 0.55);
+  box-shadow: 0 10px 22px -12px rgba(178, 61, 14, 0.55);
   &::after { transform: translateX(3px); }
 }
 .td-button:active { transform: translateY(0); }
 
+/* --accent is an alias for the default — kept so masthead.html markup is explicit */
+.td-button--accent { /* no overrides; default is already accent */ }
+
 .td-button--ghost,
 .td-button--ghost:visited {
   background: transparent;
-  color: var(--ink) !important;
-  border: 1px solid var(--ink);
+  color: var(--accent-ink) !important;
+  border: 1px solid var(--accent);
 }
 .td-button--ghost:hover {
+  background: var(--accent);
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 22px -12px rgba(178, 61, 14, 0.45);
+}
+
+.td-button--ink,
+.td-button--ink:visited {
   background: var(--ink);
-  color: var(--paper) !important;
-  box-shadow: 0 12px 24px -14px rgba(27, 26, 23, 0.45);
+  color: #FFFFFF !important;
+  border: 1px solid var(--ink);
+}
+.td-button--ink:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF !important;
+}
+
+.td-button--small {
+  font-size: 0.78rem;
+  padding: 0.55em 1.1em;
+  letter-spacing: 0.08em;
 }
 
 /* No-arrow modifier for buttons that shouldn't have a forward arrow */
 .td-button--plain::after { content: none; }
+.td-button--plain { gap: 0; }
 
 /* ----- 6. Hero ----- */
 .td-hero {
   position: relative;
   background:
     radial-gradient(1200px 500px at 85% -10%, rgba(217, 142, 98, 0.18), transparent 60%),
-    linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    linear-gradient(180deg, var(--paper-blue) 0%, var(--paper) 100%);
   border-bottom: 1px solid var(--border);
   padding: var(--space-6) 0 var(--space-5);
   z-index: 2;
@@ -501,7 +576,7 @@ a:hover { color: var(--ink); }
     margin: 0;
     overflow: hidden;
     border-radius: var(--radius-card);
-    background: var(--cream);
+    background: var(--paper-blue);
     position: relative;
     aspect-ratio: 4 / 3;
     box-shadow: 0 1px 0 rgba(27, 26, 23, 0.04);
@@ -791,7 +866,7 @@ body.layout--single {
 
   .page__hero,
   .page__hero--overlay {
-    background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%) !important;
+    background: linear-gradient(180deg, var(--paper-blue) 0%, var(--paper) 100%) !important;
     color: var(--ink) !important;
     border-bottom: 1px solid var(--border);
   }
@@ -897,7 +972,7 @@ body.layout--single {
   }
 
   .toc {
-    background: var(--cream);
+    background: var(--paper-blue);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     box-shadow: none;
@@ -934,7 +1009,7 @@ body.layout--single {
 
 /* ----- 14. Footer ----- */
 .page__footer {
-  background: var(--cream);
+  background: var(--paper-blue);
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-family: var(--sans);

@@ -1,0 +1,35 @@
+{%- comment -%}
+  Table logo: post-it stack mark + Fraunces "table" wordmark.
+
+  Three overlapping saturated post-it squares at varied rotations, with a
+  small tape strip on the topmost note. At favicon size the cluster reads
+  as three colored squares; at hero size the tape and shadows show.
+
+  Params (via include):
+    variant: "horizontal" (default) | "stacked"
+    size:    "small" | "default" | "large"
+    href:    override the wrapping link (defaults to site root)
+{%- endcomment -%}
+{%- assign _variant = include.variant | default: "horizontal" -%}
+{%- assign _size    = include.size    | default: "default" -%}
+{%- assign _href    = include.href    | default: "/" | relative_url -%}
+<a href="{{ _href }}" class="site-logo site-logo--{{ _variant }} site-logo--{{ _size }}" aria-label="Table — home">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="site-logo__mark">
+    <defs>
+      <filter id="site-logo-shadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="1.2" stdDeviation="1.1" flood-color="#1F1A14" flood-opacity="0.22"/>
+      </filter>
+    </defs>
+    <rect x="9"  y="17" width="32" height="32" rx="1.5"
+          fill="#FF6B95" filter="url(#site-logo-shadow)"
+          transform="rotate(-8 25 33)"/>
+    <rect x="16" y="14" width="32" height="32" rx="1.5"
+          fill="#4D94D6" filter="url(#site-logo-shadow)"
+          transform="rotate(5 32 30)"/>
+    <g transform="rotate(-3 32 36)" filter="url(#site-logo-shadow)">
+      <rect x="16" y="20" width="32" height="32" rx="1.5" fill="#FF7A2F"/>
+      <rect x="22" y="17" width="20" height="6"  rx="0.5" fill="#FFFFFF" opacity="0.55"/>
+    </g>
+  </svg>
+  <span class="site-logo__wordmark">table</span>
+</a>

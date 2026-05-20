@@ -1,0 +1,23 @@
+{%- comment -%}
+  Custom masthead — replaces minimal-mistakes' default. A horizontal
+  blue-pale band with the logo lockup, primary nav, and a single RSVP
+  CTA that opens the Luma calendar in a new window.
+{%- endcomment -%}
+<header class="td-masthead" role="banner">
+  <div class="td-masthead__inner">
+    {%- include site-logo.html variant="horizontal" size="default" -%}
+
+    <nav class="td-masthead__nav" aria-label="Primary">
+      {%- for link in site.data.navigation.main -%}
+        <a href="{{ link.url | relative_url }}" class="td-masthead__link">{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <a href="https://luma.com/cal-DCBzNA01juAwL7A"
+       target="_blank"
+       rel="noopener"
+       class="td-button td-button--accent td-button--small td-button--plain td-masthead__cta">
+      RSVP
+    </a>
+  </div>
+</header>
