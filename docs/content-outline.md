@@ -106,6 +106,7 @@ The people at the table have built companies, raised rounds, hired teams, and ma
 9. Offer value when you want someone's attention.
 10. Communication is everything with your team.
 11. Be open to mentorship and advice.
+12. AI is an opportunity, not just a threat.
 
 ---
 
@@ -182,7 +183,7 @@ Table is organized by **Geoff Scott**, **Benjamin Friedman**, and **Karina Mulle
 
 **4e.** So we gave it the name it deserved: **Table.**
 
-Today, Table runs regular gatherings in New York and beyond. We've held sessions in Raleigh, and we're exploring new cities including the Capital Region. We're also adding new event formats alongside the original lean-coffee mornings.
+Today, Table runs regular gatherings in New York and beyond. In 2025 we held a session in Raleigh, North Carolina, and we're exploring other cities including the New York Capital Region. We're also adding new event formats alongside the original lean-coffee mornings.
 
 There's always a seat for you at Table.
 
@@ -274,5 +275,5 @@ Help us shape themed sessions and bring expertise into the conversation.
 2. **Amanda's testimonial** — full quote text and how she should be credited.
 3. **Sponsor one-liners** — short note for each of Mariposa Wellness, Benjamin's, GS Ventures.
 4. **Members band photos** — should this be event candids (existing photos cropped) or curated portraits? Plan currently uses event candid crops.
-5. **Raleigh / Capital Region in origin story** — about-page section 4e now mentions Raleigh and the Capital Region explicitly. If those references are too forward, I can soften to "We've held sessions outside New York and are exploring new cities."
-6. **Aha moments** — current list is 11 items (cut the AI POV one). Any you want to add, cut, or rephrase before they become design elements?
+5. **Raleigh 2025 specifics** — origin story now reads "In 2025 we held a session in Raleigh, North Carolina." If you want to name the venue, host, or theme, I'll work it in.
+6. **Aha moments** — current list is 12 items. Any you want to add, cut, or rephrase before they become design elements?
