@@ -2,109 +2,158 @@
 layout: default
 ---
 
-<section class="td-hero">
-  <div class="td-hero__inner">
-    <div class="td-hero__copy" data-reveal>
-      {% if page.hero_eyebrow or site.location %}
-        <span class="td-hero__eyebrow">{{ page.hero_eyebrow | default: "NYC · Dinners & Conversation" }}</span>
-      {% endif %}
-      <h1 class="td-hero__title">{{ page.hero_title | default: site.title }}</h1>
-      <p class="td-hero__lede">{{ page.hero_tagline | default: site.subtitle }}</p>
-      <div class="td-hero__ctas">
-        {% if page.cta_label and page.cta_url %}
-          <a href="{{ page.cta_url }}" class="td-button">{{ page.cta_label }}</a>
-        {% endif %}
-        <a href="{{ '/about/' | relative_url }}" class="td-button td-button--ghost">Read our story</a>
-      </div>
+{%- comment -%} ===========================================================
+HOME — sections built in step 5 (hero, intro, alternating blocks, how it works).
+Sections 5-9 (members band, Luma, post-it collage, testimonials, CTA) are
+TODO and land in the next commit.
+=========================================================== {%- endcomment -%}
 
-      <div class="td-hero__meta">
-        <div>
-          <strong>Monthly</strong>
-          <span>In-person, NYC</span>
-        </div>
-        <div>
-          <strong>1,200+</strong>
-          <span>Founders, operators &amp; investors</span>
-        </div>
-      </div>
+{%- comment -%} 2. Hero — full-width photo with tagline overlay {%- endcomment -%}
+<section class="td-hero" data-reveal>
+  <div class="td-hero__media">
+    <img src="{{ page.hero_image | relative_url }}"
+         alt="{{ page.hero_image_alt }}"
+         loading="eager"
+         fetchpriority="high"/>
+    <div class="td-hero__scrim" aria-hidden="true"></div>
+  </div>
+
+  <div class="td-hero__overlay">
+    <div class="td-hero__inner">
+      <h1 class="td-hero__title">{{ page.hero_title }}</h1>
+      <p class="td-hero__subtitle">{{ page.hero_subtitle }}</p>
+      <a href="{{ site.rsvp_url }}"
+         target="_blank"
+         rel="noopener"
+         class="td-button td-button--plain td-hero__cta">RSVP</a>
     </div>
-
-    {% if page.photos and page.photos.size > 0 %}
-      <figure class="td-hero__media" data-reveal>
-        <img src="{{ page.photos[0].src | relative_url }}" alt="{{ page.photos[0].alt }}" loading="eager" />
-      </figure>
-    {% endif %}
   </div>
 </section>
 
-<div class="td-shell">
-  <section class="td-section" data-reveal>
-    <p class="td-section__eyebrow">The idea</p>
-    <div class="td-prose">
-      {{ content }}
+{%- comment -%} 3. Intro / "What Table is" {%- endcomment -%}
+<section class="td-intro" data-reveal>
+  <div class="td-intro__inner">
+    {{ content }}
+  </div>
+</section>
+
+{%- comment -%} 4. Alternating image-text blocks (philosophy told visually) {%- endcomment -%}
+{%- for block in page.alternating_blocks -%}
+<section class="td-alt {% cycle '', 'td-alt--right' %}" data-reveal>
+  <div class="td-alt__media">
+    <img src="{{ block.image | relative_url }}"
+         alt="{{ block.image_alt }}"
+         loading="lazy"/>
+  </div>
+  <div class="td-alt__copy">
+    <h2 class="td-alt__heading">{{ block.heading }}</h2>
+    <p class="td-alt__body">{{ block.body }}</p>
+  </div>
+</section>
+{%- endfor -%}
+
+{%- comment -%} 4a. How it works — 4-step strip {%- endcomment -%}
+<section class="td-howitworks" id="how-it-works" data-reveal>
+  <div class="td-howitworks__inner">
+    <p class="td-section__eyebrow">{{ page.howitworks.eyebrow }}</p>
+    <p class="td-howitworks__lead">{{ page.howitworks.lead }}</p>
+    <ol class="td-howitworks__steps">
+      {%- for step in page.howitworks.steps -%}
+      <li class="td-howitworks__step">
+        <span class="td-howitworks__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <strong class="td-howitworks__name">{{ step.name }}</strong>
+        <span class="td-howitworks__desc">{{ step.desc }}</span>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{%- comment -%} 5. Members focus band {%- endcomment -%}
+<section class="td-members" data-reveal>
+  <div class="td-members__inner">
+    <p class="td-section__eyebrow">{{ page.members.eyebrow }}</p>
+    <p class="td-members__stat">{{ page.members.stat }}</p>
+    <p class="td-members__caption">{{ page.members.caption }}</p>
+  </div>
+  <ul class="td-members__grid" role="list">
+    {%- for photo in page.members.photos -%}
+    <li class="td-members__cell">
+      <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy"/>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{%- comment -%} 6. Luma calendar embed {%- endcomment -%}
+<section class="td-luma" data-reveal>
+  <div class="td-luma__inner">
+    <h2 class="td-luma__heading">{{ page.luma.heading }}</h2>
+    <p class="td-luma__subhead">{{ page.luma.subhead }}</p>
+    <div class="td-luma__embed">
+      <iframe src="https://luma.com/embed/calendar/cal-DCBzNA01juAwL7A/events?compact=true"
+              width="600" height="450"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy"
+              title="Upcoming Table events on Luma"></iframe>
     </div>
-  </section>
+  </div>
+</section>
 
-  {% if page.photos and page.photos.size > 1 %}
-    <section class="td-section" data-reveal>
-      <p class="td-section__eyebrow">Around the table</p>
-      <h2 class="td-section__heading">Real rooms. Real questions. Real talk.</h2>
-      <div class="td-gallery">
-        {% assign rest = page.photos | slice: 1, 10 %}
-        {% for photo in rest %}
-          {% if forloop.first %}
-            <figure class="td-gallery__item--tall">
-              <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy" />
-              <figcaption>NYC · 2025</figcaption>
-            </figure>
-          {% else %}
-            <figure class="td-gallery__item--wide">
-              <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy" />
-            </figure>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </section>
-  {% endif %}
+{%- comment -%} 7. Aha moments — post-it collage {%- endcomment -%}
+<section class="td-collage" data-reveal>
+  <div class="td-collage__inner">
+    <p class="td-section__eyebrow">{{ page.collage.eyebrow }}</p>
+    <h2 class="td-collage__heading">{{ page.collage.heading }}</h2>
+    {%- if page.collage.subhead -%}
+      <p class="td-collage__subhead">{{ page.collage.subhead }}</p>
+    {%- endif -%}
 
-  {% if page.values and page.values.size > 0 %}
-    <section class="td-section" data-reveal>
-      <p class="td-section__eyebrow">What we stand for</p>
-      <h2 class="td-section__heading">A few values that shape every Table conversation.</h2>
-      <ol class="td-values">
-        {% for value in page.values %}
-          <li class="td-values__item">{{ value }}</li>
-        {% endfor %}
-      </ol>
-    </section>
-  {% endif %}
+    {%- if page.collage.banner -%}
+      <figure class="td-collage__banner">
+        <img src="{{ page.collage.banner | relative_url }}"
+             alt="{{ page.collage.banner_alt }}"
+             loading="lazy"/>
+      </figure>
+    {%- endif -%}
 
-  {% if page.testimonials and page.testimonials.size > 0 %}
-    <section class="td-section" data-reveal>
-      <p class="td-section__eyebrow">What members say</p>
-      <h2 class="td-section__heading">Voices from around the table.</h2>
-      <div class="td-quotes">
-        {% for t in page.testimonials %}
-          <figure class="td-quote">
-            <blockquote class="td-quote__text">{{ t.quote }}</blockquote>
-            <figcaption class="td-quote__cite">{{ t.name }}</figcaption>
-          </figure>
-        {% endfor %}
-      </div>
-    </section>
-  {% endif %}
+    <ul class="td-collage__notes" role="list">
+      {%- for note in page.collage.notes -%}
+        <li class="td-collage__note">{{ note }}</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
 
-  {% if page.closing_cta %}
-    <section class="td-cta-band" data-reveal>
-      <p class="td-cta-band__eyebrow">RSVP</p>
-      <h2 class="td-cta-band__heading">{{ page.closing_cta.heading }}</h2>
-      {% if page.closing_cta.body %}<p class="td-cta-band__body">{{ page.closing_cta.body }}</p>{% endif %}
-      {% if page.closing_cta.label and page.closing_cta.url %}
-        <a href="{{ page.closing_cta.url }}" class="td-button">{{ page.closing_cta.label }}</a>
-      {% endif %}
-    </section>
-  {% endif %}
-</div>
+{%- comment -%} 8. Testimonials {%- endcomment -%}
+<section class="td-testimonials" data-reveal>
+  <div class="td-testimonials__inner">
+    <p class="td-section__eyebrow">What members say</p>
+    <h2 class="td-testimonials__heading">Voices from around the table.</h2>
+    <div class="td-quotes">
+      {%- for t in page.testimonials -%}
+        <figure class="td-quote">
+          <blockquote class="td-quote__text">{{ t.quote }}</blockquote>
+          <figcaption class="td-quote__cite">{{ t.name }}</figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- comment -%} 9. Closing CTA band {%- endcomment -%}
+<section class="td-cta-band" data-reveal>
+  <p class="td-cta-band__eyebrow">RSVP</p>
+  <h2 class="td-cta-band__heading">{{ page.closing_cta.heading }}</h2>
+  {%- if page.closing_cta.body -%}
+    <p class="td-cta-band__body">{{ page.closing_cta.body }}</p>
+  {%- endif -%}
+  <a href="{{ site.rsvp_url }}"
+     target="_blank"
+     rel="noopener"
+     class="td-button td-button--plain td-cta-band__cta">RSVP</a>
+</section>
 
 <script>
   (function () {
@@ -123,7 +172,7 @@ layout: default
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
   })();
 </script>

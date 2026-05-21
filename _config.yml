@@ -1,12 +1,15 @@
 title: "Table"
 subtitle: "Candid conversations for founders, operators, and investors."
 description: >-
-  Table is a monthly in-person gathering in NYC where founders, operators,
-  advisors, and investors pull up a chair, bring a real question, and trust
-  the people around them to help think it through.
+  Table is an in-person gathering where founders, operators, advisors, and
+  investors pull up a chair, bring a real question, and trust the people
+  around them to help think it through.
 url: "https://tabledialogue.github.io"
 baseurl: "/tabledialogue-site"
 repository: "tabledialogue/tabledialogue-site"
+
+# All event CTAs ("RSVP" buttons across the site) point here.
+rsvp_url: "https://luma.com/cal-DCBzNA01juAwL7A"
 
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "air"
