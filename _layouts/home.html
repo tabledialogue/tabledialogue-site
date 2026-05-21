@@ -69,14 +69,91 @@ TODO and land in the next commit.
   </div>
 </section>
 
-{%- comment -%}
-TODO sections (step 6):
-  5. Members focus band ("Who's at Table — 1,300+")
-  6. Luma calendar embed
-  7. Aha moments — post-it collage
-  8. Testimonials (4 cards)
-  9. Closing CTA band
-{%- endcomment -%}
+{%- comment -%} 5. Members focus band {%- endcomment -%}
+<section class="td-members" data-reveal>
+  <div class="td-members__inner">
+    <p class="td-section__eyebrow">{{ page.members.eyebrow }}</p>
+    <p class="td-members__stat">{{ page.members.stat }}</p>
+    <p class="td-members__caption">{{ page.members.caption }}</p>
+  </div>
+  <ul class="td-members__grid" role="list">
+    {%- for photo in page.members.photos -%}
+    <li class="td-members__cell">
+      <img src="{{ photo.src | relative_url }}" alt="{{ photo.alt }}" loading="lazy"/>
+    </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{%- comment -%} 6. Luma calendar embed {%- endcomment -%}
+<section class="td-luma" data-reveal>
+  <div class="td-luma__inner">
+    <h2 class="td-luma__heading">{{ page.luma.heading }}</h2>
+    <p class="td-luma__subhead">{{ page.luma.subhead }}</p>
+    <div class="td-luma__embed">
+      <iframe src="https://luma.com/embed/calendar/cal-DCBzNA01juAwL7A/events?compact=true"
+              width="600" height="450"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy"
+              title="Upcoming Table events on Luma"></iframe>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} 7. Aha moments — post-it collage {%- endcomment -%}
+<section class="td-collage" data-reveal>
+  <div class="td-collage__inner">
+    <p class="td-section__eyebrow">{{ page.collage.eyebrow }}</p>
+    <h2 class="td-collage__heading">{{ page.collage.heading }}</h2>
+    {%- if page.collage.subhead -%}
+      <p class="td-collage__subhead">{{ page.collage.subhead }}</p>
+    {%- endif -%}
+
+    {%- if page.collage.banner -%}
+      <figure class="td-collage__banner">
+        <img src="{{ page.collage.banner | relative_url }}"
+             alt="{{ page.collage.banner_alt }}"
+             loading="lazy"/>
+      </figure>
+    {%- endif -%}
+
+    <ul class="td-collage__notes" role="list">
+      {%- for note in page.collage.notes -%}
+        <li class="td-collage__note">{{ note }}</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} 8. Testimonials {%- endcomment -%}
+<section class="td-testimonials" data-reveal>
+  <div class="td-testimonials__inner">
+    <p class="td-section__eyebrow">What members say</p>
+    <h2 class="td-testimonials__heading">Voices from around the table.</h2>
+    <div class="td-quotes">
+      {%- for t in page.testimonials -%}
+        <figure class="td-quote">
+          <blockquote class="td-quote__text">{{ t.quote }}</blockquote>
+          <figcaption class="td-quote__cite">{{ t.name }}</figcaption>
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- comment -%} 9. Closing CTA band {%- endcomment -%}
+<section class="td-cta-band" data-reveal>
+  <p class="td-cta-band__eyebrow">RSVP</p>
+  <h2 class="td-cta-band__heading">{{ page.closing_cta.heading }}</h2>
+  {%- if page.closing_cta.body -%}
+    <p class="td-cta-band__body">{{ page.closing_cta.body }}</p>
+  {%- endif -%}
+  <a href="{{ site.rsvp_url }}"
+     target="_blank"
+     rel="noopener"
+     class="td-button td-button--plain td-cta-band__cta">RSVP</a>
+</section>
 
 <script>
   (function () {

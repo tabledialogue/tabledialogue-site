@@ -627,6 +627,279 @@ a:hover { color: var(--ink); }
   display: block;
 }
 
+/* ----- 6d. Members focus band — big "1,300+" stat + photo strip ----- */
+.td-members {
+  background: var(--paper);
+  padding: var(--space-6) 1.5rem var(--space-5);
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem var(--space-4);
+  }
+}
+
+.td-members__inner {
+  max-width: var(--max-page);
+  margin: 0 auto var(--space-4);
+  text-align: center;
+}
+
+.td-members__stat {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  font-size: clamp(4rem, 13vw, 9.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: var(--accent-ink);
+  margin: 0.5rem 0 0.6rem;
+}
+
+.td-members__caption {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 40ch;
+  margin: 0 auto;
+}
+
+.td-members__grid {
+  list-style: none;
+  padding: 0;
+  max-width: var(--max-page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+
+  @media (min-width: 600px) { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (min-width: 960px) { grid-template-columns: repeat(6, 1fr); }
+}
+
+.td-members__cell {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: var(--radius-card);
+  background: var(--paper-blue);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+    filter: saturate(0.95);
+  }
+
+  &:hover img {
+    transform: scale(1.06);
+    filter: saturate(1.05);
+  }
+}
+
+/* ----- 6e. Luma calendar embed — centered card on paper-blue ----- */
+.td-luma {
+  background: var(--paper-blue);
+  padding: var(--space-6) 1.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem;
+  }
+}
+
+.td-luma__inner {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.td-luma__heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 96;
+  font-size: clamp(1.85rem, 3.6vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--accent-ink);
+  margin: 0 0 0.6rem;
+}
+
+.td-luma__subhead {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-4);
+}
+
+.td-luma__embed {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 14px 32px -18px rgba(15, 20, 30, 0.20);
+  border: 1px solid var(--border);
+
+  iframe {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    margin: 0 auto;
+    border: 0;
+  }
+}
+
+/* ----- 6f. Aha moments — saturated post-it collage with banner ----- */
+.td-collage {
+  background: var(--paper);
+  padding: var(--space-6) 1.5rem;
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem;
+  }
+}
+
+.td-collage__inner {
+  max-width: var(--max-page);
+  margin: 0 auto;
+}
+
+.td-collage__heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 120;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.026em;
+  color: var(--accent-ink);
+  margin: 0.25rem 0 0.5rem;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+
+.td-collage__subhead {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin: 0 0 var(--space-4);
+}
+
+.td-collage__banner {
+  margin: var(--space-3) 0 var(--space-4);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 18px 42px -22px rgba(15, 20, 30, 0.22);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+  }
+}
+
+.td-collage__notes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @media (min-width: 600px) { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  @media (min-width: 960px) { grid-template-columns: repeat(4, 1fr); gap: 1.6rem; }
+}
+
+.td-collage__note {
+  --rot: 0deg;
+  --bg: var(--note-yellow);
+
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.4rem 1.2rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.3;
+  color: rgba(15, 20, 30, 0.88);
+  background: var(--bg);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.04),
+    0 6px 12px -4px rgba(0,0,0,0.10),
+    0 14px 24px -10px rgba(0,0,0,0.14);
+  transform: rotate(var(--rot));
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s ease;
+  position: relative;
+  text-wrap: balance;
+
+  /* tape strip */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 44%;
+    height: 13px;
+    background: rgba(255,255,255,0.55);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+    transform: translateX(-50%) rotate(-1.5deg);
+  }
+
+  &:hover {
+    transform: rotate(0deg) scale(1.04);
+    box-shadow:
+      0 2px 0 rgba(0,0,0,0.05),
+      0 10px 18px -4px rgba(0,0,0,0.14),
+      0 22px 36px -14px rgba(0,0,0,0.18);
+    z-index: 2;
+  }
+
+  &:nth-child(5n+1) { --rot: -2deg;    --bg: var(--note-yellow); }
+  &:nth-child(5n+2) { --rot: 1.6deg;   --bg: var(--note-pink); }
+  &:nth-child(5n+3) { --rot: -1.2deg;  --bg: var(--note-blue); }
+  &:nth-child(5n+4) { --rot: 2.2deg;   --bg: var(--note-green); }
+  &:nth-child(5n+5) { --rot: -1.7deg;  --bg: var(--note-orange); }
+}
+
+/* ----- 6g. Testimonials wrapper (.td-quote already styled below) ----- */
+.td-testimonials {
+  background: var(--paper-blue);
+  padding: var(--space-6) 1.5rem;
+  border-top: 1px solid var(--border);
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem;
+  }
+}
+
+.td-testimonials__inner {
+  max-width: var(--max-page);
+  margin: 0 auto;
+}
+
+.td-testimonials__heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 96;
+  font-size: clamp(1.85rem, 3.8vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--accent-ink);
+  margin: 0.25rem 0 var(--space-4);
+  max-width: 24ch;
+  text-wrap: balance;
+}
+
 /* ----- 7. Page shell & prose ----- */
 .td-shell {
   position: relative;
@@ -800,48 +1073,48 @@ a:hover { color: var(--ink); }
 
 .td-quote__text {
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.05rem;
   line-height: 1.55;
-  color: var(--ink-soft);
+  color: var(--ink);
   margin: 0;
-  font-style: italic;
-  font-weight: 400;
 
-  &::before { content: "\201C"; margin-right: 0.05em; }
-  &::after  { content: "\201D"; margin-left: 0.05em; }
+  &::before { content: "\201C"; margin-right: 0.05em; color: var(--accent); }
+  &::after  { content: "\201D"; margin-left: 0.05em; color: var(--accent); }
 }
 
 .td-quote__cite {
-  font-family: var(--sans);
+  font-family: var(--mono);
   font-style: normal;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.74rem;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-top: auto;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border);
 }
 
-/* ----- 11. Closing CTA band ----- */
+/* ----- 11. Closing CTA band — saturated blue with warm orange glow ----- */
 .td-cta-band {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--blue);
+  color: #FFFFFF;
   text-align: center;
   padding: var(--space-6) 1.5rem;
   position: relative;
   z-index: 2;
   overflow: hidden;
 
-  /* warm radial glow */
+  /* warm orange glow over the blue field */
   &::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(800px 320px at 50% -10%, rgba(217, 142, 98, 0.32), transparent 65%),
-      radial-gradient(600px 260px at 50% 110%, rgba(181, 83, 42, 0.18), transparent 60%);
+      radial-gradient(900px 360px at 50% -10%, rgba(232, 90, 26, 0.32), transparent 65%),
+      radial-gradient(700px 280px at 50% 110%, rgba(255, 176, 102, 0.22), transparent 60%);
     pointer-events: none;
   }
 
@@ -851,55 +1124,48 @@ a:hover { color: var(--ink); }
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--accent-soft);
+    color: var(--note-orange);
     margin: 0 0 1rem;
 
     &::before, &::after {
       content: "";
       width: 24px;
       height: 1.5px;
-      background: var(--accent-soft);
+      background: var(--note-orange);
       border-radius: 2px;
-      opacity: 0.7;
+      opacity: 0.75;
     }
   }
 
   &__heading {
     font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(2.1rem, 4.4vw, 3.25rem);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-    color: var(--paper);
+    font-weight: 700;
+    font-variation-settings: "SOFT" 30, "opsz" 144;
+    font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.028em;
+    color: #FFFFFF;
     margin: 0 auto 1rem;
     max-width: 18ch;
+    text-wrap: balance;
   }
 
   &__body {
-    color: rgba(251, 247, 238, 0.78);
-    font-family: var(--serif);
-    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--sans);
     font-size: 1.1rem;
     line-height: 1.5;
-    max-width: 48ch;
+    max-width: 50ch;
     margin: 0 auto var(--space-4);
   }
 
-  .td-button {
-    background: var(--paper);
-    color: var(--ink) !important;
-    border-color: var(--paper);
-    &:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff !important;
-    }
-  }
+  /* Use the default solid-orange .td-button — no override needed here so
+     every RSVP button on the site looks identical. */
 }
 
 /* ----- 12. Reveal animation ----- */
