@@ -8,8 +8,13 @@
     {%- include site-logo.html variant="horizontal" size="default" -%}
 
     <nav class="td-masthead__nav" aria-label="Primary">
+      {%- comment -%}
+        Active-link marking is set client-side below — minimal-mistakes
+        wraps this include in include_cached so any page.url check at
+        Liquid time would freeze to whichever page rendered first.
+      {%- endcomment -%}
       {%- for link in site.data.navigation.main -%}
-        <a href="{{ link.url | relative_url }}" class="td-masthead__link">{{ link.title }}</a>
+        <a href="{{ link.url | relative_url }}" class="td-masthead__link">{{- link.title -}}</a>
       {%- endfor -%}
     </nav>
 
@@ -21,3 +26,13 @@
     </a>
   </div>
 </header>
+
+<script>
+  (function () {
+    var path = location.pathname.replace(/\/+$/, '').toLowerCase();
+    document.querySelectorAll('.td-masthead__link').forEach(function (link) {
+      var href = (link.getAttribute('href') || '').replace(/\/+$/, '').toLowerCase();
+      if (path === href) link.setAttribute('aria-current', 'page');
+    });
+  })();
+</script>

@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+{%- comment -%} 1. Hero — orange title on paper {%- endcomment -%}
+<section class="td-sponsors-hero" data-reveal>
+  <div class="td-sponsors-hero__inner">
+    <p class="td-section__eyebrow">{{ page.hero.eyebrow }}</p>
+    <h1 class="td-sponsors-hero__title">{{ page.hero.title }}</h1>
+    <p class="td-sponsors-hero__subtitle">{{ page.hero.subtitle }}</p>
+  </div>
+</section>
+
+{%- comment -%} 2. What sponsorship looks like — 3 short blocks {%- endcomment -%}
+<section class="td-tracks" data-reveal>
+  <div class="td-tracks__inner">
+    <p class="td-section__eyebrow">{{ page.tracks.eyebrow }}</p>
+    <h2 class="td-tracks__heading">{{ page.tracks.heading }}</h2>
+    <ul class="td-tracks__list" role="list">
+      {%- for track in page.tracks.items -%}
+        <li class="td-track">
+          <p class="td-track__eyebrow">{{ track.eyebrow }}</p>
+          <p class="td-track__body">{{ track.body }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} 3. Our partners — logo wall (text placeholders until logos arrive) {%- endcomment -%}
+<section class="td-partners" data-reveal>
+  <div class="td-partners__inner">
+    <p class="td-section__eyebrow">{{ page.partners.eyebrow }}</p>
+    <h2 class="td-partners__heading">{{ page.partners.heading }}</h2>
+    <ul class="td-partners__list" role="list">
+      {%- for partner in page.partners.items -%}
+        <li class="td-partner">
+          <div class="td-partner__mark">
+            {%- if partner.logo -%}
+              <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }} logo"/>
+            {%- else -%}
+              <span class="td-partner__name">{{ partner.name }}</span>
+              <span class="td-partner__placeholder-label">Logo TBD</span>
+            {%- endif -%}
+          </div>
+          {%- if partner.note -%}
+            <p class="td-partner__note">{{ partner.note }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} 4. Get in touch — reuses .td-cta-band styling (saturated blue + orange) {%- endcomment -%}
+<section class="td-cta-band" data-reveal>
+  <p class="td-cta-band__eyebrow">{{ page.contact.eyebrow }}</p>
+  <h2 class="td-cta-band__heading">{{ page.contact.heading }}</h2>
+  <p class="td-cta-band__body">{{ page.contact.body }}</p>
+  <a href="mailto:{{ page.contact.email }}" class="td-button td-button--plain">{{ page.contact.cta }}</a>
+</section>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+  })();
+</script>
