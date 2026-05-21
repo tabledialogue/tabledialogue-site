@@ -1168,6 +1168,291 @@ a:hover { color: var(--ink); }
      every RSVP button on the site looks identical. */
 }
 
+/* ===================================================================
+   About page sections
+   =================================================================== */
+
+/* ----- A1. About hero — quiet intro on paper ----- */
+.td-about-hero {
+  background: var(--paper);
+  padding: var(--space-6) 1.5rem var(--space-4);
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem var(--space-3);
+  }
+}
+
+.td-about-hero__inner {
+  max-width: var(--max-page);
+  margin: 0 auto;
+}
+
+.td-about-hero__title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 144;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--accent-ink);
+  margin: 0.4rem 0 0.7rem;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.td-about-hero__subtitle {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 50ch;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ----- A2. Team block — photo + roster ----- */
+.td-team {
+  background: var(--paper-blue);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding: var(--space-5) 1.5rem;
+  max-width: var(--max-page);
+  margin: 0 auto;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    align-items: center;
+    padding: var(--space-6) 1.5rem;
+  }
+}
+
+/* Surround the constrained grid with the band background */
+.td-team-band {
+  background: var(--paper-blue);
+}
+
+.td-team__photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 18px 40px -22px rgba(15, 20, 30, 0.22);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.td-team__copy {
+  max-width: 60ch;
+}
+
+.td-team__heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 96;
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--accent-ink);
+  margin: 0.25rem 0 1rem;
+  text-wrap: balance;
+}
+
+.td-team__body {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-3);
+}
+
+.td-team__roster {
+  margin: 0;
+  padding: var(--space-3) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.td-team__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+
+  @media (min-width: 540px) {
+    grid-template-columns: 12rem 1fr;
+    gap: 1.2rem;
+    align-items: baseline;
+  }
+}
+
+.td-team__row dt {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 36;
+  font-size: 1.05rem;
+  color: var(--accent-ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.td-team__row dd {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ----- A3. Origin section header ----- */
+.td-origin {
+  background: var(--paper);
+  padding: var(--space-6) 1.5rem var(--space-2);
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem var(--space-2);
+  }
+}
+
+.td-origin__inner {
+  max-width: var(--max-page);
+  margin: 0 auto;
+}
+
+.td-origin__heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 120;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.026em;
+  color: var(--accent-ink);
+  margin: 0.25rem 0 0;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+/* ----- A4. Alt block — narrative modifier (origin chapters) ----- */
+.td-alt--narrative {
+  padding: var(--space-4) 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: var(--space-5) 1.5rem;
+    align-items: start;
+  }
+}
+
+.td-alt--narrative .td-alt__media {
+  aspect-ratio: 4 / 3;
+
+  @media (min-width: 768px) {
+    aspect-ratio: 5 / 4;
+  }
+}
+
+.td-alt--narrative .td-alt__copy {
+  align-self: center;
+}
+
+.td-alt__body--narrative {
+  font-family: var(--sans);
+  font-size: 1.06rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 50ch;
+}
+
+.td-alt__lead {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 96;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.024em;
+  color: var(--ink);
+  margin: 0 0 1rem;
+  text-wrap: balance;
+
+  em {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--accent-ink);
+  }
+}
+
+.td-alt__tail {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 30, "opsz" 64;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--accent-ink);
+  margin: 1.25rem 0 0;
+}
+
+/* ----- A5. Values section (about page wrapper) ----- */
+.td-values-section {
+  background: var(--paper-blue);
+  padding: var(--space-6) 1.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  @media (max-width: 720px) {
+    padding: var(--space-5) 1.25rem;
+  }
+}
+
+.td-values-section__inner {
+  max-width: var(--max-page);
+  margin: 0 auto;
+}
+
+.td-values-section__heading {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-variation-settings: "SOFT" 30, "opsz" 96;
+  font-size: clamp(1.85rem, 3.6vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--accent-ink);
+  margin: 0.25rem 0 var(--space-4);
+  max-width: 26ch;
+  text-wrap: balance;
+}
+
+.td-values-section__cross-link {
+  margin: var(--space-4) 0 0;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  a {
+    color: var(--accent-ink);
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 0.2em;
+    transition: color .15s ease, border-color .15s ease;
+
+    &:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent-ink);
+    }
+  }
+}
+
 /* ----- 12. Reveal animation ----- */
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal] {
