@@ -101,31 +101,6 @@ TODO and land in the next commit.
   </div>
 </section>
 
-{%- comment -%} 7. Aha moments — post-it collage {%- endcomment -%}
-<section class="td-collage" data-reveal>
-  <div class="td-collage__inner">
-    <p class="td-section__eyebrow">{{ page.collage.eyebrow }}</p>
-    <h2 class="td-collage__heading">{{ page.collage.heading }}</h2>
-    {%- if page.collage.subhead -%}
-      <p class="td-collage__subhead">{{ page.collage.subhead }}</p>
-    {%- endif -%}
-
-    {%- if page.collage.banner -%}
-      <figure class="td-collage__banner">
-        <img src="{{ page.collage.banner | relative_url }}"
-             alt="{{ page.collage.banner_alt }}"
-             loading="lazy"/>
-      </figure>
-    {%- endif -%}
-
-    <ul class="td-collage__notes" role="list">
-      {%- for note in page.collage.notes -%}
-        <li class="td-collage__note">{{ note }}</li>
-      {%- endfor -%}
-    </ul>
-  </div>
-</section>
-
 {%- comment -%} 8. Testimonials {%- endcomment -%}
 <section class="td-testimonials" data-reveal>
   <div class="td-testimonials__inner">
