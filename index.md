@@ -65,7 +65,7 @@ testimonials:
   - name: "Mamadou Cisse"
     quote: "My experience with Table started with wanting to learn about building a startup. I ended up finding community, mentors, and friends who've helped guide me. No Table event has been the same, and the insights from an amalgam of people have been so valuable."
   - name: "Amanda"
-    quote: "Placeholder. Amanda's testimonial is pending."
+    quote: "I love attending Table each month. It is the perfect way to step away from the computer and have real conversations. I've made so many new, genuine connections and received helpful feedback on my business. As a new founder, being able to practice my 1-sentence pitch and refine my value proposition has been the biggest benefit so far. I love that it is a diverse group of people — from founders, to fractional leaders, to lawyers and accountants. I would recommend this group to any founder/CEO who is looking for support."
 
 closing_cta:
   heading: "Pull up a chair."
