@@ -201,12 +201,103 @@ a:hover { color: var(--ink); }
   flex-shrink: 0;
 }
 
-@media (max-width: 720px) {
-  .td-masthead__nav { gap: 0.9rem; }
-  .td-masthead__link { font-size: 0.7rem; letter-spacing: 0.14em; }
+/* ----- 4b. Mobile hamburger toggle ----- */
+.td-masthead__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--ink-soft);
+  position: relative;
+  flex-shrink: 0;
+
+  &:hover { color: var(--accent-ink); }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
+
+.td-masthead__toggle-bar {
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform .2s ease, opacity .15s ease, top .2s ease;
+
+  &:nth-child(1) { top: calc(50% - 7px); }
+  &:nth-child(2) { top: 50%; }
+  &:nth-child(3) { top: calc(50% + 7px); }
+}
+
+/* X state when nav is open */
+.td-masthead.is-open .td-masthead__toggle-bar {
+  &:nth-child(1) { top: 50%; transform: translate(-50%, -50%) rotate(45deg); }
+  &:nth-child(2) { opacity: 0; }
+  &:nth-child(3) { top: 50%; transform: translate(-50%, -50%) rotate(-45deg); }
+}
+
+@media (max-width: 720px) {
+  .td-masthead__inner { position: relative; }
+
+  /* Show the toggle, hide the inline nav by default. */
+  .td-masthead__toggle { display: inline-block; }
+
+  /* Nav becomes a drop panel below the masthead. */
+  .td-masthead__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--blue-pale);
+    border-bottom: 1px solid rgba(15, 30, 50, 0.08);
+    box-shadow: 0 14px 28px -16px rgba(15, 20, 30, 0.22);
+    padding: 0.4rem 1rem 0.8rem;
+
+    /* Collapsed state */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height .25s ease, opacity .2s ease, padding .25s ease;
+  }
+
+  .td-masthead.is-open .td-masthead__nav {
+    max-height: 60vh;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .td-masthead__link {
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid rgba(15, 30, 50, 0.08);
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+
+    &:last-child { border-bottom: 0; }
+    &[aria-current="page"] { border-bottom-color: var(--accent); }
+  }
+
+  /* RSVP stays visible (just smaller) to keep the conversion path obvious */
+  .td-masthead__cta { margin-left: 0.5rem; }
+}
+
 @media (max-width: 540px) {
   .td-masthead__cta { display: none; }
+  .td-masthead__toggle { margin-left: auto; }
 }
 
 /* ----- 4a. Logo lockup ----- */
@@ -221,8 +312,8 @@ a:hover { color: var(--ink); }
   &:hover { color: inherit; }
 
   &__mark {
-    width: 38px;
-    height: 38px;
+    width: 50px;
+    height: 50px;
     flex-shrink: 0;
     display: block;
   }
@@ -232,10 +323,9 @@ a:hover { color: var(--ink); }
     font-weight: 700;
     font-variation-settings: "SOFT" 30, "opsz" 96;
     color: var(--accent-ink);
-    font-size: 1.7rem;
-    letter-spacing: -0.028em;
+    font-size: 2.2rem;
+    letter-spacing: -0.022em;
     line-height: 0.95;
-    text-transform: lowercase;
   }
 
   &--stacked {
@@ -244,16 +334,16 @@ a:hover { color: var(--ink); }
     gap: 0.35rem;
   }
 
-  &--small .site-logo__mark    { width: 28px; height: 28px; }
-  &--small .site-logo__wordmark { font-size: 1.35rem; }
+  &--small .site-logo__mark    { width: 36px; height: 36px; }
+  &--small .site-logo__wordmark { font-size: 1.7rem; }
 
-  &--large .site-logo__mark    { width: 56px; height: 56px; }
-  &--large .site-logo__wordmark { font-size: 2.6rem; }
+  &--large .site-logo__mark    { width: 72px; height: 72px; }
+  &--large .site-logo__wordmark { font-size: 3.2rem; }
 }
 
 @media (max-width: 480px) {
-  .site-logo--default .site-logo__mark    { width: 32px; height: 32px; }
-  .site-logo--default .site-logo__wordmark { font-size: 1.5rem; }
+  .site-logo--default .site-logo__mark    { width: 40px; height: 40px; }
+  .site-logo--default .site-logo__wordmark { font-size: 1.85rem; }
 }
 
 /* ----- 5. Buttons -----
@@ -431,12 +521,12 @@ a:hover { color: var(--ink); }
 /* ----- 6a. Intro band — one short paragraph block on paper ----- */
 .td-intro {
   background: var(--paper);
-  padding: var(--space-6) 1.5rem;
+  padding: var(--space-5) 1.5rem var(--space-3);
   position: relative;
   z-index: 2;
 
   @media (max-width: 720px) {
-    padding: var(--space-5) 1.25rem;
+    padding: var(--space-4) 1.25rem var(--space-2);
   }
 }
 
@@ -468,17 +558,17 @@ a:hover { color: var(--ink); }
   gap: var(--space-3);
   max-width: var(--max-page);
   margin: 0 auto;
-  padding: var(--space-5) 1.5rem;
+  padding: var(--space-2) 1.5rem;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-5);
     align-items: center;
-    padding: var(--space-6) 1.5rem;
+    padding: var(--space-3) 1.5rem;
   }
 
   @media (max-width: 720px) {
-    padding: var(--space-4) 1.25rem;
+    padding: var(--space-2) 1.25rem;
   }
 }
 
@@ -1504,6 +1594,40 @@ a:hover { color: var(--ink); }
   text-wrap: balance;
 }
 
+/* ----- S1a. Value prop — three paragraphs on paper, sits above tracks ----- */
+.td-sponsors-valueprop {
+  background: var(--paper);
+  padding: var(--space-3) 1.5rem var(--space-5);
+
+  @media (max-width: 720px) {
+    padding: var(--space-2) 1.25rem var(--space-4);
+  }
+}
+
+.td-sponsors-valueprop__inner {
+  max-width: 64ch;
+  margin: 0 auto;
+}
+
+.td-sponsors-valueprop__para {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-variation-settings: "SOFT" 30, "opsz" 64;
+  font-size: clamp(1.15rem, 1.55vw, 1.32rem);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 1em;
+  text-wrap: pretty;
+
+  &:last-child { margin-bottom: 0; }
+
+  /* Lift the closing "you gain direct access" beat */
+  &:last-child {
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+}
+
 /* ----- S2. Sponsorship tracks — 3 mono-eyebrow blocks ----- */
 .td-tracks {
   background: var(--paper-blue);
@@ -1669,6 +1793,28 @@ a:hover { color: var(--ink); }
     height: auto;
     object-fit: contain;
   }
+}
+
+/* When a real logo is present, drop the placeholder candy-stripe */
+.td-partner--has-logo .td-partner__mark {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-style: solid;
+}
+
+/* Whole-card link wrapper for partners with a URL */
+.td-partner__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+
+  &:hover { color: inherit; }
+  &:hover .td-partner__mark { border-color: var(--accent-soft); }
 }
 
 .td-partner__name {

@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+{%- comment -%} 1. Quiet header on paper {%- endcomment -%}
+<section class="td-about-hero" data-reveal>
+  <div class="td-about-hero__inner">
+    <p class="td-section__eyebrow">{{ page.intro.eyebrow }}</p>
+    <h1 class="td-about-hero__title">{{ page.intro.title }}</h1>
+    {%- if page.intro.subtitle -%}
+      <p class="td-about-hero__subtitle">{{ page.intro.subtitle }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- comment -%} 2. Aha moments — post-it collage (same markup as home) {%- endcomment -%}
+<section class="td-collage" data-reveal>
+  <div class="td-collage__inner">
+    {%- if page.collage.banner -%}
+      <figure class="td-collage__banner">
+        <img src="{{ page.collage.banner | relative_url }}"
+             alt="{{ page.collage.banner_alt }}"
+             loading="lazy"/>
+      </figure>
+    {%- endif -%}
+
+    <ul class="td-collage__notes" role="list">
+      {%- for note in page.collage.notes -%}
+        <li class="td-collage__note">{{ note }}</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{%- comment -%} 3. Closing CTA band (shared style) {%- endcomment -%}
+<section class="td-cta-band" data-reveal>
+  <p class="td-cta-band__eyebrow">RSVP</p>
+  <h2 class="td-cta-band__heading">{{ page.closing_cta.heading }}</h2>
+  {%- if page.closing_cta.body -%}
+    <p class="td-cta-band__body">{{ page.closing_cta.body }}</p>
+  {%- endif -%}
+  <a href="{{ site.rsvp_url }}"
+     target="_blank"
+     rel="noopener"
+     class="td-button td-button--plain">RSVP</a>
+</section>
+
+<script>
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+  })();
+</script>

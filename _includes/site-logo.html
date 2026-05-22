@@ -1,9 +1,9 @@
 {%- comment -%}
-  Table logo: post-it stack mark + Fraunces "table" wordmark.
+  Table logo: saturated post-it grid mark + Fraunces "Table" wordmark.
 
-  Three overlapping saturated post-it squares at varied rotations, with a
-  small tape strip on the topmost note. At favicon size the cluster reads
-  as three colored squares; at hero size the tape and shadows show.
+  The mark mirrors the favicon: a 5x5 grid of small saturated squares in
+  the post-it palette (yellow / pink / blue / green / orange), with a
+  faint white tape strip across the top to keep the post-it metaphor.
 
   Params (via include):
     variant: "horizontal" (default) | "stacked"
@@ -15,21 +15,24 @@
 {%- assign _href    = include.href    | default: "/" | relative_url -%}
 <a href="{{ _href }}" class="site-logo site-logo--{{ _variant }} site-logo--{{ _size }}" aria-label="Table — home">
   <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="site-logo__mark">
-    <defs>
-      <filter id="site-logo-shadow" x="-30%" y="-30%" width="160%" height="160%">
-        <feDropShadow dx="0" dy="1.2" stdDeviation="1.1" flood-color="#1F1A14" flood-opacity="0.22"/>
-      </filter>
-    </defs>
-    <rect x="9"  y="17" width="32" height="32" rx="1.5"
-          fill="#FF6B95" filter="url(#site-logo-shadow)"
-          transform="rotate(-8 25 33)"/>
-    <rect x="16" y="14" width="32" height="32" rx="1.5"
-          fill="#4D94D6" filter="url(#site-logo-shadow)"
-          transform="rotate(5 32 30)"/>
-    <g transform="rotate(-3 32 36)" filter="url(#site-logo-shadow)">
-      <rect x="16" y="20" width="32" height="32" rx="1.5" fill="#FF7A2F"/>
-      <rect x="22" y="17" width="20" height="6"  rx="0.5" fill="#FFFFFF" opacity="0.55"/>
+    {%- comment -%}
+      5x5 grid of 10x10 squares inset into a 64-unit viewBox. Cells are
+      colored from a fixed palette in a hand-mixed sequence so no two
+      adjacent cells share a color. Colors track the --note-* tokens in
+      main.scss (yellow/pink/blue/green/orange).
+    {%- endcomment -%}
+    <g>
+      {%- assign _row0 = "#FFD84D|#FF9FB1|#7CB8E8|#FFB066|#8CD79A" | split: "|" -%}
+      {%- assign _row1 = "#7CB8E8|#FFB066|#8CD79A|#FFD84D|#FF9FB1" | split: "|" -%}
+      {%- assign _row2 = "#FF9FB1|#8CD79A|#FFD84D|#7CB8E8|#FFB066" | split: "|" -%}
+      {%- assign _row3 = "#8CD79A|#FFD84D|#FFB066|#FF9FB1|#7CB8E8" | split: "|" -%}
+      {%- assign _row4 = "#FFB066|#7CB8E8|#FF9FB1|#8CD79A|#FFD84D" | split: "|" -%}
+      {%- for c in _row0 -%}<rect x="{{ forloop.index0 | times: 11 | plus: 5 }}" y="5"  width="9" height="9" rx="1" fill="{{ c }}"/>{%- endfor -%}
+      {%- for c in _row1 -%}<rect x="{{ forloop.index0 | times: 11 | plus: 5 }}" y="16" width="9" height="9" rx="1" fill="{{ c }}"/>{%- endfor -%}
+      {%- for c in _row2 -%}<rect x="{{ forloop.index0 | times: 11 | plus: 5 }}" y="27" width="9" height="9" rx="1" fill="{{ c }}"/>{%- endfor -%}
+      {%- for c in _row3 -%}<rect x="{{ forloop.index0 | times: 11 | plus: 5 }}" y="38" width="9" height="9" rx="1" fill="{{ c }}"/>{%- endfor -%}
+      {%- for c in _row4 -%}<rect x="{{ forloop.index0 | times: 11 | plus: 5 }}" y="49" width="9" height="9" rx="1" fill="{{ c }}"/>{%- endfor -%}
     </g>
   </svg>
-  <span class="site-logo__wordmark">table</span>
+  <span class="site-logo__wordmark">Table</span>
 </a>

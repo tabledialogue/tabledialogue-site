@@ -7,7 +7,17 @@
   <div class="td-masthead__inner">
     {%- include site-logo.html variant="horizontal" size="default" -%}
 
-    <nav class="td-masthead__nav" aria-label="Primary">
+    <button class="td-masthead__toggle"
+            type="button"
+            aria-controls="td-primary-nav"
+            aria-expanded="false"
+            aria-label="Open menu">
+      <span class="td-masthead__toggle-bar" aria-hidden="true"></span>
+      <span class="td-masthead__toggle-bar" aria-hidden="true"></span>
+      <span class="td-masthead__toggle-bar" aria-hidden="true"></span>
+    </button>
+
+    <nav class="td-masthead__nav" id="td-primary-nav" aria-label="Primary">
       {%- comment -%}
         Active-link marking is set client-side below — minimal-mistakes
         wraps this include in include_cached so any page.url check at
@@ -33,6 +43,30 @@
     document.querySelectorAll('.td-masthead__link').forEach(function (link) {
       var href = (link.getAttribute('href') || '').replace(/\/+$/, '').toLowerCase();
       if (path === href) link.setAttribute('aria-current', 'page');
+    });
+
+    var masthead = document.querySelector('.td-masthead');
+    var toggle = document.querySelector('.td-masthead__toggle');
+    if (!masthead || !toggle) return;
+
+    function setOpen(open) {
+      masthead.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(!masthead.classList.contains('is-open'));
+    });
+
+    // Close on navigation-link click (panel doesn't linger after jumping pages)
+    document.querySelectorAll('.td-masthead__link').forEach(function (link) {
+      link.addEventListener('click', function () { setOpen(false); });
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && masthead.classList.contains('is-open')) setOpen(false);
     });
   })();
 </script>

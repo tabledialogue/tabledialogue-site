@@ -9,7 +9,7 @@ baseurl: "/tabledialogue-site"
 repository: "tabledialogue/tabledialogue-site"
 
 # All event CTAs ("RSVP" buttons across the site) point here.
-rsvp_url: "https://luma.com/cal-DCBzNA01juAwL7A"
+rsvp_url: "https://luma.com/tabledialogue"
 
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "air"

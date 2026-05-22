@@ -18,17 +18,17 @@
 
 ### Real rooms.
 
-![DSC01098](../assets/images/incoming/DSC01098.JPG)
+![DSC01101](../assets/images/incoming/DSC01101.JPG)
 
-**`DSC01098.JPG`** — Wide room shot from the back: speaker at the front of the room (Karina), full table of attendees, projector with the organizer photos visible, NYC skyline through the window. Best "room atmosphere" composition I've seen — captures place, format, and people in one frame. *(Was DSC01093, which had all three organizers crowded at the front.)*
+**`DSC01101.JPG`** — Wide view down the length of the table: ~10 attendees seated along the long edge, projector visible at the far end. Sharp focus, diverse mix. *(May 2026 swap from DSC01098, which had Karina at the front of the room and read soft per stakeholder feedback. DSC01101 has no organizer prominently in frame.)*
 
 ---
 
 ### Real questions.
 
-![DSC08410](../assets/images/incoming/DSC08410.JPG)
+![DSC08383](../assets/images/incoming/DSC08383.JPG)
 
-**`DSC08410.JPG`** — Attendee mid-thought speaking, Lean Coffee instructions visible on the slides behind. Pure attendee, no organizers in frame. *(Was DSC01102, which featured Benjamin speaking.)*
+**`DSC08383.JPG`** — Woman attendee mid-gesture as she speaks, listeners on either side. Strong "attendee mid-thought" composition; foregrounds a female speaker to help gender balance per stakeholder feedback. *(May 2026 swap from DSC08410, which featured Sean and was flagged for de-prioritization. DSC08410 stays in `incoming/` as an alternate.)*
 
 ---
 

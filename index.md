@@ -12,11 +12,11 @@ alternating_blocks:
   - heading: "Real rooms."
     body: "Table gatherings happen in person, around a real table. Rooms small enough that everyone gets airtime, large enough that you'll meet someone you wouldn't have met otherwise."
     image: /assets/images/real-rooms-wide.jpg
-    image_alt: "Wide view of a Table session: speaker at the front of the room, attendees seated, NYC skyline through the windows."
+    image_alt: "Wide view down the length of a Table session: attendees seated along a long wood table, projector slides visible at the far end."
   - heading: "Real questions."
     body: "Every attendee proposes the topics. We vote, we discuss, and we move when the energy moves. No fixed agenda. Whoever shows up sets the conversation."
     image: /assets/images/real-questions-speaker.jpg
-    image_alt: "Attendee speaking mid-thought, Lean Coffee instructions visible on the slides behind."
+    image_alt: "Attendee gesturing mid-thought as she speaks, listeners on either side of her, post-its scattered across the table."
   - heading: "Real talk."
     body: "The people at the table have built companies, raised rounds, hired teams, and made mistakes. They bring those scars to the conversation, not a rehearsed version of them."
     image: /assets/images/real-talk-three-listening.jpg
@@ -57,26 +57,6 @@ luma:
   heading: "What's on the calendar"
   subhead: "Reserve a seat at an upcoming Table."
 
-collage:
-  eyebrow: "AHA MOMENTS"
-  heading: "Things people said at recent Tables"
-  subhead: "A handful of ideas that came out of recent conversations."
-  banner: /assets/images/aha-moments-board-overhead.jpg
-  banner_alt: "Overhead view of a Lean Coffee board mid-session: saturated post-its organized into TO DO, DOING, DONE, and AHA columns, with stacked Sharpies at the top."
-  notes:
-    - "Using AI is a skill, not just a tool."
-    - "Set up your corp legals early."
-    - "Fundraising is a full-time job."
-    - "Warm intros are the best fundraising channel."
-    - "Niche selling: focus on smaller groups."
-    - "Empathy over persuasion."
-    - "Strong advisors are key to a founder's success."
-    - "Genuine storytelling beats polished pitches."
-    - "Offer value when you want someone's attention."
-    - "Communication is everything with your team."
-    - "Be open to mentorship and advice."
-    - "AI is an opportunity, not just a threat."
-
 testimonials:
   - name: "Diane Peng"
     quote: "Table creates a rare space where founders can openly share what's weighing on them and receive thoughtful perspectives from peers and advisors in the startup community. The conversations are candid, practical, and grounding."
@@ -85,7 +65,7 @@ testimonials:
   - name: "Mamadou Cisse"
     quote: "My experience with Table started with wanting to learn about building a startup. I ended up finding community, mentors, and friends who've helped guide me. No Table event has been the same, and the insights from an amalgam of people have been so valuable."
   - name: "Amanda"
-    quote: "Placeholder. Amanda's testimonial is pending."
+    quote: "I love attending Table each month. It is the perfect way to step away from the computer and have real conversations. I've made so many new, genuine connections and received helpful feedback on my business. As a new founder, being able to practice my 1-sentence pitch and refine my value proposition has been the biggest benefit so far. I love that it is a diverse group of people — from founders, to fractional leaders, to lawyers and accountants. I would recommend this group to any founder/CEO who is looking for support."
 
 closing_cta:
   heading: "Pull up a chair."

@@ -8,6 +8,12 @@ hero:
   title: "Sponsorship opportunities."
   subtitle: "Table is community-supported. Our partners help us keep these gatherings free, welcoming, and high quality."
 
+valueprop:
+  paragraphs:
+    - "Since 2019, Table has gathered over 1,300 early-stage founders to pressure-test ideas, swap playbooks, and get unstuck."
+    - "Founders leave with proven tactics, warm introductions, and a clearer path forward. We offer our events free to founders through corporate sponsorships."
+    - "As a sponsor, you gain direct access and brand visibility with a curated network of pre-seed to Series A founders who are actively looking for products, services, and partners to help them build, launch, and grow their companies."
+
 tracks:
   eyebrow: "WAYS TO PARTNER"
   heading: "What sponsorship looks like."
@@ -25,7 +31,9 @@ partners:
   items:
     - name: "Mariposa Wellness"
       note: "Wellness practice and community partner."
-    - name: "Benjamin Friedman"
+    - name: "Build Scale Grow"
+      url: "https://www.webuildscalegrow.com/"
+      logo: /assets/images/sponsors/build-scale-grow.png
       note: "Brand and operating partner."
     - name: "GS Ventures"
       note: "Investment partner."

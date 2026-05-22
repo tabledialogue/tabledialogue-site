@@ -3,8 +3,23 @@
 > Every JPG in `assets/images/incoming/`, thumbnailed for scanning. Click any image for the full-size original. Use this sheet to identify alternates if you want to swap any selection in [`image-selections.md`](./image-selections.md).
 >
 > **Sources**
+> - May 2026 — Benjamin's feedback-note attachments (5 files, low-res B-roll)
 > - November 2025 — Table session (28 files, current era)
 > - June 2025 — Startup Lean Coffee (36 files, pre-rebrand)
+
+---
+
+## May 2026 — Benjamin's feedback-note attachments
+
+<table>
+<tr>
+<td align="center" width="20%"><a href="../assets/images/incoming/BFN-01.JPG"><img src="../assets/images/incoming/thumbs/BFN-01.JPG" alt="BFN-01"></a><br><sub><code>BFN-01</code></sub></td>
+<td align="center" width="20%"><a href="../assets/images/incoming/BFN-02.JPG"><img src="../assets/images/incoming/thumbs/BFN-02.JPG" alt="BFN-02"></a><br><sub><code>BFN-02</code></sub></td>
+<td align="center" width="20%"><a href="../assets/images/incoming/BFN-03.JPG"><img src="../assets/images/incoming/thumbs/BFN-03.JPG" alt="BFN-03"></a><br><sub><code>BFN-03</code></sub></td>
+<td align="center" width="20%"><a href="../assets/images/incoming/BFN-04.JPG"><img src="../assets/images/incoming/thumbs/BFN-04.JPG" alt="BFN-04"></a><br><sub><code>BFN-04</code></sub></td>
+<td align="center" width="20%"><a href="../assets/images/incoming/BFN-05.JPG"><img src="../assets/images/incoming/thumbs/BFN-05.JPG" alt="BFN-05"></a><br><sub><code>BFN-05</code></sub></td>
+</tr>
+</table>
 
 ---
 

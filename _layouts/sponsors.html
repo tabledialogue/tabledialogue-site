@@ -11,6 +11,17 @@ layout: default
   </div>
 </section>
 
+{%- comment -%} 1a. Value prop — three paragraphs on paper {%- endcomment -%}
+{%- if page.valueprop.paragraphs -%}
+<section class="td-sponsors-valueprop" data-reveal>
+  <div class="td-sponsors-valueprop__inner">
+    {%- for para in page.valueprop.paragraphs -%}
+      <p class="td-sponsors-valueprop__para">{{ para }}</p>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
 {%- comment -%} 2. What sponsorship looks like — 3 short blocks {%- endcomment -%}
 <section class="td-tracks" data-reveal>
   <div class="td-tracks__inner">
@@ -34,7 +45,10 @@ layout: default
     <h2 class="td-partners__heading">{{ page.partners.heading }}</h2>
     <ul class="td-partners__list" role="list">
       {%- for partner in page.partners.items -%}
-        <li class="td-partner">
+        <li class="td-partner {% if partner.logo %}td-partner--has-logo{% endif %}">
+          {%- if partner.url -%}
+            <a class="td-partner__link" href="{{ partner.url }}" target="_blank" rel="noopener">
+          {%- endif -%}
           <div class="td-partner__mark">
             {%- if partner.logo -%}
               <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }} logo"/>
@@ -45,6 +59,9 @@ layout: default
           </div>
           {%- if partner.note -%}
             <p class="td-partner__note">{{ partner.note }}</p>
+          {%- endif -%}
+          {%- if partner.url -%}
+            </a>
           {%- endif -%}
         </li>
       {%- endfor -%}
