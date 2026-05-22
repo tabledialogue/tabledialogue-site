@@ -201,12 +201,103 @@ a:hover { color: var(--ink); }
   flex-shrink: 0;
 }
 
-@media (max-width: 720px) {
-  .td-masthead__nav { gap: 0.9rem; }
-  .td-masthead__link { font-size: 0.7rem; letter-spacing: 0.14em; }
+/* ----- 4b. Mobile hamburger toggle ----- */
+.td-masthead__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--ink-soft);
+  position: relative;
+  flex-shrink: 0;
+
+  &:hover { color: var(--accent-ink); }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
+
+.td-masthead__toggle-bar {
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform .2s ease, opacity .15s ease, top .2s ease;
+
+  &:nth-child(1) { top: calc(50% - 7px); }
+  &:nth-child(2) { top: 50%; }
+  &:nth-child(3) { top: calc(50% + 7px); }
+}
+
+/* X state when nav is open */
+.td-masthead.is-open .td-masthead__toggle-bar {
+  &:nth-child(1) { top: 50%; transform: translate(-50%, -50%) rotate(45deg); }
+  &:nth-child(2) { opacity: 0; }
+  &:nth-child(3) { top: 50%; transform: translate(-50%, -50%) rotate(-45deg); }
+}
+
+@media (max-width: 720px) {
+  .td-masthead__inner { position: relative; }
+
+  /* Show the toggle, hide the inline nav by default. */
+  .td-masthead__toggle { display: inline-block; }
+
+  /* Nav becomes a drop panel below the masthead. */
+  .td-masthead__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--blue-pale);
+    border-bottom: 1px solid rgba(15, 30, 50, 0.08);
+    box-shadow: 0 14px 28px -16px rgba(15, 20, 30, 0.22);
+    padding: 0.4rem 1rem 0.8rem;
+
+    /* Collapsed state */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height .25s ease, opacity .2s ease, padding .25s ease;
+  }
+
+  .td-masthead.is-open .td-masthead__nav {
+    max-height: 60vh;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0.5rem 1rem 1rem;
+  }
+
+  .td-masthead__link {
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid rgba(15, 30, 50, 0.08);
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+
+    &:last-child { border-bottom: 0; }
+    &[aria-current="page"] { border-bottom-color: var(--accent); }
+  }
+
+  /* RSVP stays visible (just smaller) to keep the conversion path obvious */
+  .td-masthead__cta { margin-left: 0.5rem; }
+}
+
 @media (max-width: 540px) {
   .td-masthead__cta { display: none; }
+  .td-masthead__toggle { margin-left: auto; }
 }
 
 /* ----- 4a. Logo lockup ----- */
