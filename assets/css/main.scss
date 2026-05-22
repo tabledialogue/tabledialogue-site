@@ -430,12 +430,12 @@ a:hover { color: var(--ink); }
 /* ----- 6a. Intro band — one short paragraph block on paper ----- */
 .td-intro {
   background: var(--paper);
-  padding: var(--space-6) 1.5rem;
+  padding: var(--space-5) 1.5rem var(--space-3);
   position: relative;
   z-index: 2;
 
   @media (max-width: 720px) {
-    padding: var(--space-5) 1.25rem;
+    padding: var(--space-4) 1.25rem var(--space-2);
   }
 }
 
@@ -467,17 +467,17 @@ a:hover { color: var(--ink); }
   gap: var(--space-3);
   max-width: var(--max-page);
   margin: 0 auto;
-  padding: var(--space-3) 1.5rem;
+  padding: var(--space-2) 1.5rem;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-5);
     align-items: center;
-    padding: var(--space-5) 1.5rem;
+    padding: var(--space-3) 1.5rem;
   }
 
   @media (max-width: 720px) {
-    padding: var(--space-3) 1.25rem;
+    padding: var(--space-2) 1.25rem;
   }
 }
 
