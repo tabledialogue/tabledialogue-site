@@ -10,6 +10,6 @@ Gemfile.lock
 # Per-user Claude Code permissions
 .claude/settings.local.json
 
-# Image library staging — originals downloaded from Drive for selection.
-# Only the chosen subset gets renamed and committed to assets/images/.
-assets/images/incoming/
+# Image library — tracked so the proposal in docs/image-selections.md
+# is reviewable on GitHub. Excluded from the Jekyll build via _config.yml
+# (see "exclude:" — assets/images/incoming/ is not served).

@@ -44,6 +44,7 @@ exclude:
   - Gemfile.lock
   - vendor
   - docs
+  - assets/images/incoming
 
 defaults:
   - scope:
