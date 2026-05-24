@@ -40,18 +40,12 @@ origin_blocks:
     image: /assets/images/origin-coorganizers-2025.jpg
     image_alt: "Karina Muller and Benjamin Friedman in casual standing conversation."
   - body_lead: "So we gave it the name it deserved: <em>Table.</em>"
-    paragraphs:
-      - "Life's most important moments happen at a table. We face difficult decisions with people we trust."
-      - "Throughout history, philosophers, scientists, and visionary leaders have gathered around their tables to collaboratively spark real progress."
-      - "At <strong>Table</strong>, we build practical solutions. We share knowledge and create lasting relationships through a supportive community."
+    body: "Life's most important moments happen at a table. We face difficult decisions with people we trust. Throughout history, philosophers, scientists, and visionary leaders have gathered around their tables to collaboratively spark real progress. At <strong>Table</strong>, we build practical solutions. We share knowledge and create lasting relationships through a supportive community."
     body_tail: "There's a seat waiting for you at <strong>Table</strong>."
     image: /assets/images/origin-today-wrap-up.jpg
     image_alt: "Post-session wrap-up scene: attendees still talking, the Wrap Up slide visible on the screen behind them."
   - body_lead: "We're setting up more Tables."
-    paragraphs:
-      - "Table runs regular gatherings in New York and beyond since 2019."
-      - "In 2026, we held a session in Raleigh, NC, and we're exploring other cities including the New York Capital Region, Chicago, and Miami."
-      - "We're also adding new event formats alongside the original lean-coffee mornings."
+    body: "Table runs regular gatherings in New York and beyond since 2019. In 2026, we held a session in Raleigh, NC, and we're exploring other cities including the New York Capital Region, Chicago, and Miami. We're also adding new event formats alongside the original lean-coffee mornings."
     image: /assets/images/origin-more-tables-2026.jpg
     image_alt: "Attendees standing around a long wood table in a conference room; QR codes displayed on twin screens at left."
 
@@ -70,5 +64,5 @@ values_section:
 
 closing_cta:
   heading: "Pull up a chair."
-  body: "Bring a real question and a willingness to help someone else think through theirs."
+  body: "Bring a real question and a willingness<br>to help someone else think through theirs."
 ---

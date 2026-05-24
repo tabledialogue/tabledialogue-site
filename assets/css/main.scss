@@ -839,7 +839,7 @@ a:hover { color: var(--ink); }
     display: block;
     width: 100%;
     max-width: 600px;
-    height: 450px;
+    height: 600px;
     margin: 0 auto;
     border: 0;
   }
@@ -1886,6 +1886,21 @@ a:hover { color: var(--ink); }
     transition: color .15s ease;
   }
   .social-icons a:hover .svg-inline--fa { color: var(--accent); }
+}
+
+/* The Sponsors contact button shows the full email address as its label
+   (Benjamin's round-2 ask). It's much wider than the short "RSVP" /
+   "Email us" labels the .td-button rules were tuned for, so let it
+   shrink + wrap at narrow viewports rather than overflow the band. */
+@media (max-width: 480px) {
+  .td-cta-band .td-button {
+    font-size: 0.82rem;
+    padding: 0.7em 1.1em;
+    white-space: normal;
+    text-align: center;
+    word-break: break-word;
+    max-width: 100%;
+  }
 }
 
 /* ----- 15. Responsive nudges (small phones) ----- */

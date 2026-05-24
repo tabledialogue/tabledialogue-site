@@ -18,9 +18,9 @@
 
 ### Real rooms.
 
-![DSC01101](../assets/images/incoming/DSC01101.JPG)
+![KMM-01](../assets/images/incoming/KMM-01.JPG)
 
-**`DSC01101.JPG`** — Wide view down the length of the table: ~10 attendees seated along the long edge, projector visible at the far end. Sharp focus, diverse mix. *(May 2026 swap from DSC01098, which had Karina at the front of the room and read soft per stakeholder feedback. DSC01101 has no organizer prominently in frame.)*
+**`KMM-01.JPG`** — Long table mid-session, attendees seated along both sides, post-its + breakfast plates across the surface, dark conference-room screens in the background. From Karina's May 20, 2026 session. *(May 24, 2026 swap from DSC01101, which had Benjamin in foreground mid-gesture — Benjamin flagged that his pose duplicated the raised-hands woman in the adjacent "Real questions" photo. KMM-01 has no organizer in frame and the energy/atmosphere matches.)*
 
 ---
 

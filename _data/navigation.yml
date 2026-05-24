@@ -3,7 +3,7 @@ main:
     url: /
   - title: "About"
     url: /about/
-  - title: "Aha moments"
-    url: /aha-moments/
+  - title: "Aha!"
+    url: /aha/
   - title: "Sponsors"
     url: /sponsors/

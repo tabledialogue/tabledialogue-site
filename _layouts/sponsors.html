@@ -74,6 +74,9 @@ layout: default
   <p class="td-cta-band__eyebrow">{{ page.contact.eyebrow }}</p>
   <h2 class="td-cta-band__heading">{{ page.contact.heading }}</h2>
   <p class="td-cta-band__body">{{ page.contact.body }}</p>
+  {%- if page.contact.body_2 -%}
+    <p class="td-cta-band__body">{{ page.contact.body_2 }}</p>
+  {%- endif -%}
   <a href="mailto:{{ page.contact.email }}" class="td-button td-button--plain">{{ page.contact.cta }}</a>
 </section>
 
