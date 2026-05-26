@@ -37,8 +37,10 @@ partners:
       url: "https://www.webuildscalegrow.com/"
       logo: /assets/images/sponsors/build-scale-grow.jpg
       note: "Brand and operating partner."
-    - name: "GS Ventures"
-      note: "Investment partner."
+    - name: "Growth Science"
+      url: "https://growthscience.co"
+      logo: /assets/images/sponsors/growth-science.svg
+      note: "Executive coaching."
 
 contact:
   eyebrow: "GET IN TOUCH"
