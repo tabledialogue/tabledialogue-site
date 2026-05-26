@@ -29,19 +29,24 @@ partners:
   eyebrow: "OUR PARTNERS"
   heading: "Companies that help make Table possible."
   items:
-    - name: "Mariposa Wellness"
+    - name: "Maripossa Wellness"
+      url: "http://www.maripossawellness.com/"
+      logo: /assets/images/sponsors/maripossa-wellness.jpg
       note: "Wellness practice and community partner."
     - name: "Build Scale Grow"
       url: "https://www.webuildscalegrow.com/"
-      logo: /assets/images/sponsors/build-scale-grow.png
+      logo: /assets/images/sponsors/build-scale-grow.jpg
       note: "Brand and operating partner."
-    - name: "GS Ventures"
-      note: "Investment partner."
+    - name: "Growth Science"
+      url: "https://growthscience.co"
+      logo: /assets/images/sponsors/growth-science.svg
+      note: "Executive coaching."
 
 contact:
   eyebrow: "GET IN TOUCH"
   heading: "Partner with Table."
-  body: "Interested in sponsoring a Table? Tell us a bit about your business and how you'd like to be involved."
-  cta: "Email us"
+  body: "Interested in sponsoring a Table?"
+  body_2: "Tell us your business and how you'd like to be involved."
+  cta: "hello@tabledialogue.com"
   email: "hello@tabledialogue.com"
 ---

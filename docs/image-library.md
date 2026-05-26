@@ -3,9 +3,37 @@
 > Every JPG in `assets/images/incoming/`, thumbnailed for scanning. Click any image for the full-size original. Use this sheet to identify alternates if you want to swap any selection in [`image-selections.md`](./image-selections.md).
 >
 > **Sources**
+> - May 20, 2026 — Karina's session (12 files, latest)
 > - May 2026 — Benjamin's feedback-note attachments (5 files, low-res B-roll)
-> - November 2025 — Table session (28 files, current era)
+> - November 2025 — Table session (26 files, current era)
 > - June 2025 — Startup Lean Coffee (36 files, pre-rebrand)
+
+---
+
+## May 20, 2026 — Karina's session
+
+<table>
+<tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-01.JPG"><img src="../assets/images/incoming/thumbs/KMM-01.JPG" alt="KMM-01"></a><br><sub><code>KMM-01</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-02.JPG"><img src="../assets/images/incoming/thumbs/KMM-02.JPG" alt="KMM-02"></a><br><sub><code>KMM-02</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-03.JPG"><img src="../assets/images/incoming/thumbs/KMM-03.JPG" alt="KMM-03"></a><br><sub><code>KMM-03</code></sub></td>
+</tr>
+<tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-04.JPG"><img src="../assets/images/incoming/thumbs/KMM-04.JPG" alt="KMM-04"></a><br><sub><code>KMM-04</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-05.JPG"><img src="../assets/images/incoming/thumbs/KMM-05.JPG" alt="KMM-05"></a><br><sub><code>KMM-05</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-06.JPG"><img src="../assets/images/incoming/thumbs/KMM-06.JPG" alt="KMM-06"></a><br><sub><code>KMM-06</code></sub></td>
+</tr>
+<tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-07.JPG"><img src="../assets/images/incoming/thumbs/KMM-07.JPG" alt="KMM-07"></a><br><sub><code>KMM-07</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-08.JPG"><img src="../assets/images/incoming/thumbs/KMM-08.JPG" alt="KMM-08"></a><br><sub><code>KMM-08</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-09.JPG"><img src="../assets/images/incoming/thumbs/KMM-09.JPG" alt="KMM-09"></a><br><sub><code>KMM-09</code></sub></td>
+</tr>
+<tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-10.JPG"><img src="../assets/images/incoming/thumbs/KMM-10.JPG" alt="KMM-10"></a><br><sub><code>KMM-10</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-11.JPG"><img src="../assets/images/incoming/thumbs/KMM-11.JPG" alt="KMM-11"></a><br><sub><code>KMM-11</code></sub></td>
+<td align="center" width="33%"><a href="../assets/images/incoming/KMM-12.JPG"><img src="../assets/images/incoming/thumbs/KMM-12.JPG" alt="KMM-12"></a><br><sub><code>KMM-12</code></sub></td>
+</tr>
+</table>
 
 ---
 
@@ -120,28 +148,28 @@
 </tr>
 <tr>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08409.JPG"><img src="../assets/images/incoming/thumbs/DSC08409.JPG" alt="DSC08409"></a><br><sub><code>DSC08409</code></sub></td>
-<td align="center" width="33%"><a href="../assets/images/incoming/DSC08410.JPG"><img src="../assets/images/incoming/thumbs/DSC08410.JPG" alt="DSC08410"></a><br><sub><code>DSC08410</code></sub></td>
-<td align="center" width="33%"><a href="../assets/images/incoming/DSC08412.JPG"><img src="../assets/images/incoming/thumbs/DSC08412.JPG" alt="DSC08412"></a><br><sub><code>DSC08412</code></sub></td>
-</tr>
-<tr>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08413.JPG"><img src="../assets/images/incoming/thumbs/DSC08413.JPG" alt="DSC08413"></a><br><sub><code>DSC08413</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08415.JPG"><img src="../assets/images/incoming/thumbs/DSC08415.JPG" alt="DSC08415"></a><br><sub><code>DSC08415</code></sub></td>
-<td align="center" width="33%"><a href="../assets/images/incoming/DSC08416.JPG"><img src="../assets/images/incoming/thumbs/DSC08416.JPG" alt="DSC08416"></a><br><sub><code>DSC08416</code></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/DSC08416.JPG"><img src="../assets/images/incoming/thumbs/DSC08416.JPG" alt="DSC08416"></a><br><sub><code>DSC08416</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08418.JPG"><img src="../assets/images/incoming/thumbs/DSC08418.JPG" alt="DSC08418"></a><br><sub><code>DSC08418</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08423.JPG"><img src="../assets/images/incoming/thumbs/DSC08423.JPG" alt="DSC08423"></a><br><sub><code>DSC08423</code></sub></td>
-<td align="center" width="33%"><a href="../assets/images/incoming/DSC08424.JPG"><img src="../assets/images/incoming/thumbs/DSC08424.JPG" alt="DSC08424"></a><br><sub><code>DSC08424</code></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/DSC08424.JPG"><img src="../assets/images/incoming/thumbs/DSC08424.JPG" alt="DSC08424"></a><br><sub><code>DSC08424</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08425.JPG"><img src="../assets/images/incoming/thumbs/DSC08425.JPG" alt="DSC08425"></a><br><sub><code>DSC08425</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08428.JPG"><img src="../assets/images/incoming/thumbs/DSC08428.JPG" alt="DSC08428"></a><br><sub><code>DSC08428</code></sub></td>
-<td align="center" width="33%"><a href="../assets/images/incoming/DSC08430.JPG"><img src="../assets/images/incoming/thumbs/DSC08430.JPG" alt="DSC08430"></a><br><sub><code>DSC08430</code></sub></td>
 </tr>
 <tr>
+<td align="center" width="33%"><a href="../assets/images/incoming/DSC08430.JPG"><img src="../assets/images/incoming/thumbs/DSC08430.JPG" alt="DSC08430"></a><br><sub><code>DSC08430</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08431.JPG"><img src="../assets/images/incoming/thumbs/DSC08431.JPG" alt="DSC08431"></a><br><sub><code>DSC08431</code></sub></td>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08432.JPG"><img src="../assets/images/incoming/thumbs/DSC08432.JPG" alt="DSC08432"></a><br><sub><code>DSC08432</code></sub></td>
+</tr>
+<tr>
 <td align="center" width="33%"><a href="../assets/images/incoming/DSC08434.JPG"><img src="../assets/images/incoming/thumbs/DSC08434.JPG" alt="DSC08434"></a><br><sub><code>DSC08434</code></sub></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 </table>

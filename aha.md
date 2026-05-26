@@ -1,10 +1,10 @@
 ---
-layout: aha_moments
-permalink: /aha-moments/
-title: "Aha moments"
+layout: aha
+permalink: /aha/
+title: "Aha!"
 
 intro:
-  eyebrow: "AHA MOMENTS"
+  eyebrow: "AHA!"
   title: "Things people said at recent Tables."
   subtitle: "A running collection of ideas that came out of recent conversations."
 
@@ -27,5 +27,5 @@ collage:
 
 closing_cta:
   heading: "Pull up a chair."
-  body: "Bring a real question and a willingness to help someone else think through theirs."
+  body: "Bring a real question and a willingness<br>to help someone else think through theirs."
 ---

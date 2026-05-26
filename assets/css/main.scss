@@ -839,7 +839,7 @@ a:hover { color: var(--ink); }
     display: block;
     width: 100%;
     max-width: 600px;
-    height: 450px;
+    height: 600px;
     margin: 0 auto;
     border: 0;
   }
@@ -1770,7 +1770,7 @@ a:hover { color: var(--ink); }
 
 .td-partner__mark {
   width: 100%;
-  aspect-ratio: 5 / 2;
+  height: clamp(150px, 15vw, 184px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1795,7 +1795,9 @@ a:hover { color: var(--ink); }
   }
 }
 
-/* When a real logo is present, drop the placeholder candy-stripe */
+/* When a real logo is present, drop the placeholder candy-stripe.
+   Logos stay vertically centered (inherited from .td-partner__mark);
+   the uniform box height keeps all marks aligned on a common midline. */
 .td-partner--has-logo .td-partner__mark {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1886,6 +1888,21 @@ a:hover { color: var(--ink); }
     transition: color .15s ease;
   }
   .social-icons a:hover .svg-inline--fa { color: var(--accent); }
+}
+
+/* The Sponsors contact button shows the full email address as its label
+   (Benjamin's round-2 ask). It's much wider than the short "RSVP" /
+   "Email us" labels the .td-button rules were tuned for, so let it
+   shrink + wrap at narrow viewports rather than overflow the band. */
+@media (max-width: 480px) {
+  .td-cta-band .td-button {
+    font-size: 0.82rem;
+    padding: 0.7em 1.1em;
+    white-space: normal;
+    text-align: center;
+    word-break: break-word;
+    max-width: 100%;
+  }
 }
 
 /* ----- 15. Responsive nudges (small phones) ----- */
