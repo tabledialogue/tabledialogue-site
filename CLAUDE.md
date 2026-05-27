@@ -6,7 +6,7 @@ Guidance for Claude Code when working in this repository.
 
 Marketing/content site for **Table** — a monthly in-person gathering in NYC for founders, operators, advisors, and investors.
 
-Live URL: https://tabledialogue.github.io/tabledialogue-site
+Live URL: https://tabledialogue.com (custom domain; served from the apex via the `CNAME` file)
 
 ## Stack
 
@@ -39,7 +39,7 @@ The canonical path is native Ruby 3.x:
 
 ```bash
 bundle install
-bundle exec jekyll serve --livereload   # http://localhost:4000/tabledialogue-site/
+bundle exec jekyll serve --livereload   # http://localhost:4000/
 bundle exec jekyll build                # one-shot build into _site/
 ```
 
@@ -59,7 +59,7 @@ docker run -d \
   sh -c "bundle config set --local path vendor/bundle && bundle install --jobs 4 && bundle exec jekyll serve --host 0.0.0.0 --port 4001"
 ```
 
-- Site URL: **http://localhost:4001/tabledialogue-site/**
+- Site URL: **http://localhost:4001/**
 - First boot does a full `bundle install` (~1–3 min). `docker logs -f td-jekyll` to watch progress until `Server running...`.
 
 Lifecycle:
@@ -73,7 +73,7 @@ docker rm -f td-jekyll      # remove (next start re-downloads theme)
 
 ## Conventions
 
-- **Don't change `baseurl`** in `_config.yml` (`/tabledialogue-site`) — it matches the GitHub Pages project path. Use `{{ '/path' | relative_url }}` in templates and `[text](/path)` in Markdown won't auto-prefix; prefer `relative_url` filters in Liquid.
+- **`baseurl` is empty** (`""`) in `_config.yml` — the site is served from the apex of the `tabledialogue.com` custom domain (set by the `CNAME` file), not a GitHub Pages project subpath. Still use `{{ '/path' | relative_url }}` in templates rather than hardcoding paths, so the site stays portable. Don't reintroduce a `baseurl` unless the custom domain goes away.
 - **Page titles** in front-matter should not repeat the site name — `jekyll-seo-tag` appends it automatically.
 - **Images** go in `assets/images/`; reference with leading slash and `relative_url` in Liquid.
 - **Theme overrides** belong in `_includes/`, `_layouts/`, or `assets/css/main.scss` — don't vendor the whole theme.

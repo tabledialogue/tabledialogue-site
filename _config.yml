@@ -4,8 +4,8 @@ description: >-
   Table is an in-person gathering where founders, operators, advisors, and
   investors pull up a chair, bring a real question, and trust the people
   around them to help think it through.
-url: "https://tabledialogue.github.io"
-baseurl: "/tabledialogue-site"
+url: "https://tabledialogue.com"
+baseurl: ""
 repository: "tabledialogue/tabledialogue-site"
 
 # All event CTAs ("RSVP" buttons across the site) point here.
