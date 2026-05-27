@@ -1,6 +1,6 @@
 # tabledialogue-site
 
-Source for **[Table](https://tabledialogue.github.io/tabledialogue-site)** — candid conversations for founders, operators, and investors. Monthly, in NYC.
+Source for **[Table](https://tabledialogue.com)** — candid conversations for founders, operators, and investors. Monthly, in NYC.
 
 Built with [Jekyll](https://jekyllrb.com/) and the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) theme. Hosted on GitHub Pages.
 
@@ -13,7 +13,7 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Then open http://localhost:4000/tabledialogue-site/.
+Then open http://localhost:4000/.
 
 To build without serving:
 
