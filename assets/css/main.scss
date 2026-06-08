@@ -455,6 +455,13 @@ a:hover { color: var(--ink); }
     object-fit: cover;
     object-position: center 35%;
     display: block;
+
+    /* On narrow viewports `cover` crops to a tall band. Centered, that band
+       falls on the middle of this wide photo and cuts off the attendees on
+       the left. Pull the focal point left so the full group stays in frame. */
+    @media (max-width: 720px) {
+      object-position: 10% 35%;
+    }
   }
 }
 
