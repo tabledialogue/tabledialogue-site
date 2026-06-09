@@ -51,7 +51,7 @@ members:
     - src: /assets/images/members-05-gesture.jpg
       alt: "Attendee gesturing mid-sentence to an attentive listener."
     - src: /assets/images/members-06-speaking.jpg
-      alt: "Young attendee speaking thoughtfully at the table, window light behind."
+      alt: "A full table of attendees giving thumbs-up mid-session, sticky notes and coffee cups across the surface."
 
 luma:
   heading: "What's on the calendar"
