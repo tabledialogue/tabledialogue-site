@@ -442,6 +442,11 @@ a:hover { color: var(--ink); }
   overflow: hidden;
   background: var(--ink);
   isolation: isolate;
+
+  /* Shorter band on mobile so there's less photo above the headline. */
+  @media (max-width: 720px) {
+    height: clamp(440px, 62vh, 560px);
+  }
 }
 
 .td-hero__media {
@@ -458,9 +463,14 @@ a:hover { color: var(--ink); }
 
     /* On narrow viewports `cover` crops to a tall band. Centered, that band
        falls on the middle of this wide photo and cuts off the attendees on
-       the left. Pull the focal point left so the full group stays in frame. */
+       the left. Pull the focal point left so the full group stays in frame.
+       This wide photo (1616x1080) is shorter than the mobile band, so `cover`
+       shows its full height — leaving dead wall/tapestry above everyone's
+       heads. Scale up from the bottom to crop that top strip away. */
     @media (max-width: 720px) {
       object-position: 10% 35%;
+      transform: scale(1.32);
+      transform-origin: 50% 92%;
     }
   }
 }
@@ -470,8 +480,8 @@ a:hover { color: var(--ink); }
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(8, 12, 24, 0.20) 0%, rgba(8, 12, 24, 0.55) 65%, rgba(8, 12, 24, 0.78) 100%),
-    linear-gradient(90deg, rgba(8, 12, 24, 0.5) 0%, rgba(8, 12, 24, 0.1) 55%, transparent 100%);
+    linear-gradient(180deg, rgba(8, 12, 24, 0.14) 0%, rgba(8, 12, 24, 0.40) 65%, rgba(8, 12, 24, 0.58) 100%),
+    linear-gradient(90deg, rgba(8, 12, 24, 0.36) 0%, rgba(8, 12, 24, 0.07) 55%, transparent 100%);
   pointer-events: none;
 }
 
@@ -502,7 +512,7 @@ a:hover { color: var(--ink); }
   line-height: 1.02;
   letter-spacing: -0.028em;
   margin: 0 0 1rem;
-  color: var(--accent);
+  color: var(--accent-ink);
   max-width: 20ch;
   text-wrap: balance;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
